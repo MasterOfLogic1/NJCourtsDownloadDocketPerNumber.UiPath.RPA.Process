@@ -1,0 +1,207 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="NavigateToCivilSearchPage" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="longWaitTime" Type="InArgument(x:Double)" />
+    <x:Property Name="shortWaitTime" Type="InArgument(x:Double)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>NavigateToCivilSearchPage_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="NavigateToCivilSearchPage" sap:VirtualizedContainerService.HintSize="1052.8,1284" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence sap2010:Annotation.AnnotationText="Here we navigate to the civil search page where items can be looked up by docket number" sap:VirtualizedContainerService.HintSize="1052.8,1260.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="targetUrl" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Assign sap:VirtualizedContainerService.HintSize="1019.2,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[targetUrl]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">https://portal.njcourts.gov/webcivilcj/CIVILCaseJacketWeb/pages/civilCaseSearch.faces</InArgument>
+        </Assign.Value>
+      </Assign>
+      <uix:NApplicationCard sap2010:Annotation.AnnotationText="Here we navigate to the civil search page where items can be looked up by docket number" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: eCourts Civil Case Jacket" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="1019.2,1032.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsDisplayNameAuto="True" OpenMode="Never" ScopeGuid="2459ae3d-8d7c-46be-a4f7-2f8b20ed5fd5" Timeout="[shortWaitTime]" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="985.6,761.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NGoToUrl sap2010:Annotation.AnnotationText="Navigate to target page" DisplayName="Go To URL - " sap:VirtualizedContainerService.HintSize="952,145.6" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="[targetUrl]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NGoToUrl>
+              <uix:NCheckState sap2010:Annotation.AnnotationText="Check that navigation was successful" DisplayName="Check App State 'Search By Docket Number'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="952,554.4" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="2459ae3d-8d7c-46be-a4f7-2f8b20ed5fd5" Timeout="[longWaitTime]" Version="V4">
+                <uix:NCheckState.IfExists>
+                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,280" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Search By Docket Number'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,218.4" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2459ae3d-8d7c-46be-a4f7-2f8b20ed5fd5" Timeout="[shortWaitTime]" Version="V4">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="portal.njcourts.gov/webcivilcj/CIVILCaseJacketWeb/pages/civilCaseSearch.faces" CVScreenId="f379d392-8476-47bf-af9e-ee05cc24f6a3" DesignTimeRectangle="367, 331, 211, 35" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Search By Docket Number' parentid='tabs' /&gt;" Guid="e93c1911-2b5e-4694-8c77-44a634a89a86" InformativeScreenshot="0cdd5ceb8a93d32544c4245231190466.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*eCourts*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None" />
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                  </Sequence>
+                </uix:NCheckState.IfExists>
+                <uix:NCheckState.IfNotExists>
+                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="449.6,176.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Throw Exception="[New SystemException(&quot;unable to navigate to &quot;+ targetUrl )]" sap:VirtualizedContainerService.HintSize="416,115.2" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                  </Sequence>
+                </uix:NCheckState.IfNotExists>
+                <uix:NCheckState.Target>
+                  <uix:TargetAnchorable BrowserURL="portal.njcourts.gov/webcivilcj/CIVILCaseJacketWeb/pages/civilCaseSearch.faces" CVScreenId="f379d392-8476-47bf-af9e-ee05cc24f6a3" DesignTimeRectangle="367, 331, 211, 35" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Search By Docket Number' parentid='tabs' /&gt;" Guid="f2c79149-901b-4a81-93cb-7dfebf9a8e4e" InformativeScreenshot="b54c5b9be1d8aef04609b8e3e00ad6a5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*eCourts*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None" />
+                </uix:NCheckState.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NCheckState>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="-1929, -9, 1938, 1038" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="6bee5c498f508440b9df37e6f656d3f3.jpg" Selector="&lt;html app='chrome.exe' title='*' /&gt;" Url="https://portal.njcourts.gov/webcivilcj/CIVILCaseJacketWeb/pages/civilCaseSearch.faces" Version="V2" />
+        </uix:NApplicationCard.TargetApp>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </uix:NApplicationCard>
+    </Sequence>
+  </Sequence>
+</Activity>

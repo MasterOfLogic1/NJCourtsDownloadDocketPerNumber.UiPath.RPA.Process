@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Activity mc:Ignorable="sap sap2010" x:Class="OpenAndLoginToNJCourts" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="shortWaitTime" Type="InArgument(x:Double)" />
+    <x:Property Name="botUsername" Type="InArgument(x:String)" />
+    <x:Property Name="botPassword" Type="InArgument(x:String)" />
+    <x:Property Name="longWaitTime" Type="InArgument(x:Double)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>OpenAndLoginToNJCourts_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Net</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.MetadataLoadContext</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Net.WebClient</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Net.HttpListener</AssemblyReference>
+      <AssemblyReference>System.Net.WebProxy</AssemblyReference>
+      <AssemblyReference>System.Net.NameResolution</AssemblyReference>
+      <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
+      <AssemblyReference>System.Net.Requests</AssemblyReference>
+      <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="OpenAndLoginToNJCourts" sap:VirtualizedContainerService.HintSize="1196.4,4340" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="shouldLogin" />
+      <Variable x:TypeArguments="x:Boolean" Name="alreadyLoggedIn" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence sap:VirtualizedContainerService.HintSize="1156.8,4316.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1123.2,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;will open and login to nj courts&quot;]" />
+      <uix:NApplicationCard sap2010:Annotation.AnnotationText="Open browser and confirm if already logged in . if not logged in then log in" CloseMode="Never" DisplayName="Use Application/Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="1123.2,4059.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="edb06ab3-aefb-4a27-9afa-7f2dcb6d71c9" Timeout="[longWaitTime]" WindowResize="Maximize">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1089.6,3748" sap2010:WorkflowViewState.IdRef="Sequence_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:TimeoutScope sap2010:Annotation.AnnotationText="for 15 secs - Not should log in and also not already logged in ensure one of them is sastified" DisplayName="Timeout Scope" sap:VirtualizedContainerService.HintSize="1056,1473.6" sap2010:WorkflowViewState.IdRef="TimeoutScope_1" ThrowExceptionAfter="00:00:15" TimeoutMessage="Unable to find username or Nj court portal tile - could not determine logged in instance">
+                <ui:TimeoutScope.Body>
+                  <ActivityAction x:TypeArguments="Activity">
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1054.4,1260" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1020.8,176" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;checking if logged in&quot;]" />
+                      <ui:InterruptibleWhile CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Not should log in and also not already logged in" Condition="[Not alreadyLoggedIn AndAlso Not shouldLogin]" DisplayName="While" sap:VirtualizedContainerService.HintSize="1020.8,1024" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+                        <ui:InterruptibleWhile.Body>
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1019.2,871.2" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Sequence sap:VirtualizedContainerService.HintSize="985.6,811.2" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NCheckState sap2010:Annotation.AnnotationText="Check for username field" DisplayName="Check for username field" Exists="[shouldLogin]" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="952,648.8" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="edb06ab3-aefb-4a27-9afa-7f2dcb6d71c9" Timeout="2" Version="V4">
+                                <uix:NCheckState.IfExists>
+                                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,287.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;username field found&quot;]" />
+                                    <ui:Break sap:VirtualizedContainerService.HintSize="416,49.6" sap2010:WorkflowViewState.IdRef="Break_1" />
+                                  </Sequence>
+                                </uix:NCheckState.IfExists>
+                                <uix:NCheckState.IfNotExists>
+                                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="449.6,91.2" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </Sequence>
+                                </uix:NCheckState.IfNotExists>
+                                <uix:NCheckState.Target>
+                                  <uix:TargetAnchorable BrowserURL="portal-cloud.njcourts.gov/prweb/PRAuth/CloudSAMLAuth" CVScreenId="3103259f-9412-4134-b82d-1daa7d51118e" CvElementArea="1268, 529, 558, 41" CvType="InputBox" DesignTimeRectangle="1269, 528, 557, 40" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='userid' tag='INPUT' type='text' class='' placeholder='User ID' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="faf5e2b1-b5aa-4793-95b5-c5498c5e16e0" InformativeScreenshot="8d14ccc1c491c8a57318564355222306.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='NJCourts Online: Login' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target CVScreenId="3103259f-9412-4134-b82d-1daa7d51118e" DesignTimeRectangle="1270, 530, 556, 38" ElementType="Text" FullSelectorArgument="&lt;webctrl id='userid' tag='INPUT' name='username' /&gt;" Guid="26d916ab-b6b3-438f-ae57-dc11d93bea2f" SearchSteps="Selector" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NCheckState.Target>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NCheckState>
+                              <uix:NCheckState sap2010:Annotation.AnnotationText="Check for Nj Courts Tile" DisplayName="Check for Nj Courts Tile" Exists="[alreadyLoggedIn]" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="952,79.2" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="edb06ab3-aefb-4a27-9afa-7f2dcb6d71c9" Timeout="2" Version="V4">
+                                <uix:NCheckState.IfExists>
+                                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,287.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Nj court tile found&quot;]" />
+                                    <ui:Break sap:VirtualizedContainerService.HintSize="416,49.6" sap2010:WorkflowViewState.IdRef="Break_2" />
+                                  </Sequence>
+                                </uix:NCheckState.IfExists>
+                                <uix:NCheckState.IfNotExists>
+                                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="449.6,91.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </Sequence>
+                                </uix:NCheckState.IfNotExists>
+                                <uix:NCheckState.Target>
+                                  <uix:TargetAnchorable BrowserURL="portal-cloud.njcourts.gov/prweb/PRAuth/app/ESSOPortal/yq-No0lmafOGrDifQdN4Pahs104wZlR3*/!STANDARD" CVScreenId="21463fc9-ec2a-426c-879d-36a46ec018a9" DesignTimeRectangle="314, 249, 424, 27" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='RULE_KEY' innertext='New Jersey Courts - Portal Home Page' /&gt;" Guid="9636fac0-860a-4e64-a078-db0401eb1564" InformativeScreenshot="7c1b72295604139e0d605897b223c81e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='*' title='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
+                                </uix:NCheckState.Target>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NCheckState>
+                            </Sequence>
+                          </Sequence>
+                        </ui:InterruptibleWhile.Body>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:InterruptibleWhile>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:TimeoutScope.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:TimeoutScope>
+              <If sap2010:Annotation.AnnotationText="If should login is true then proceed to login" Condition="[shouldLogin]" sap:VirtualizedContainerService.HintSize="1056,2044" sap2010:WorkflowViewState.IdRef="If_1">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If.Then>
+                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="483.2,1784.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Sequence sap2010:Annotation.AnnotationText="-Enter Username&#xA;-Enter Password&#xA;-Click Login" sap:VirtualizedContainerService.HintSize="449.6,1724.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;entering username&quot;]" />
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'INPUT userid'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="edb06ab3-aefb-4a27-9afa-7f2dcb6d71c9" Text="[botUsername]" Timeout="[shortWaitTime]" Version="V4">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable BrowserURL="portal-cloud.njcourts.gov" CVScreenId="eb0272be-6b9b-46f2-818a-645d7fc2ff17" CvElementArea="1268, 529, 558, 41" CvType="InputBox" DesignTimeRectangle="1269, 529, 557, 40" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='userid' tag='INPUT' type='text' class='' placeholder='User ID' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="afe44303-d481-4b80-9b10-ef78c404a668" InformativeScreenshot="93dc1b606a3fb404a6ccc218cd3598bf.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='NJCourts Online: Login' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target CVScreenId="eb0272be-6b9b-46f2-818a-645d7fc2ff17" DesignTimeRectangle="1270, 530, 556, 38" ElementType="Text" FullSelectorArgument="&lt;webctrl id='userid' tag='INPUT' name='username' /&gt;" Guid="4ce127b0-197d-4416-9492-0633285962e0" SearchSteps="Selector" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NTypeInto.Target>
+                        <uix:NTypeInto.VerifyOptions>
+                          <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                            <uix:VerifyExecutionTypeIntoOptions.Retry>
+                              <InArgument x:TypeArguments="x:Boolean" />
+                            </uix:VerifyExecutionTypeIntoOptions.Retry>
+                            <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                              <InArgument x:TypeArguments="x:Double" />
+                            </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          </uix:VerifyExecutionTypeIntoOptions>
+                        </uix:NTypeInto.VerifyOptions>
+                      </uix:NTypeInto>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;entering password&quot;]" />
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'INPUT passwd'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" IsPassword="True" ScopeIdentifier="edb06ab3-aefb-4a27-9afa-7f2dcb6d71c9" SecureText="[New System.Net.NetworkCredential(&quot;&quot;, botPassword).SecurePassword]" Timeout="[shortWaitTime]" Version="V4">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable BrowserURL="portal-cloud.njcourts.gov/prweb/PRAuth/CloudSAMLAuth" CVScreenId="408e1e50-adab-49fa-8d2e-15c9bca0ab59" CvElementArea="1269, 631, 558, 40" CvType="InputBox" DesignTimeRectangle="1268, 631, 558, 39" ElementType="InputBoxPassword" FullSelectorArgument="&lt;webctrl id='passwd' tag='INPUT' name='password' /&gt;" FuzzySelectorArgument="&lt;webctrl id='passwd' tag='INPUT' type='password' class='' placeholder='Password' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="1199116b-8865-4702-bd04-85a4c6aca37d" InformativeScreenshot="9d25b1a2791718d95ef34c153c792d7c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='NJCourts*Login' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                <uix:Target CVScreenId="408e1e50-adab-49fa-8d2e-15c9bca0ab59" DesignTimeRectangle="1270, 633, 556, 37" ElementType="Text" FullSelectorArgument="&lt;webctrl id='passwd' tag='INPUT' name='password' /&gt;" Guid="82881def-1bed-4c59-a029-a0bcf1a3c972" SearchSteps="Selector" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NTypeInto.Target>
+                        <uix:NTypeInto.VerifyOptions>
+                          <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                            <uix:VerifyExecutionTypeIntoOptions.Retry>
+                              <InArgument x:TypeArguments="x:Boolean" />
+                            </uix:VerifyExecutionTypeIntoOptions.Retry>
+                            <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                              <InArgument x:TypeArguments="x:Double" />
+                            </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          </uix:VerifyExecutionTypeIntoOptions>
+                        </uix:NTypeInto.VerifyOptions>
+                      </uix:NTypeInto>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;click login&quot;]" />
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Login'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,225.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="edb06ab3-aefb-4a27-9afa-7f2dcb6d71c9" Timeout="[shortWaitTime]" Version="V4">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="portal-cloud.njcourts.gov" CVScreenId="8aac9d37-76bc-47c7-8aaa-540d186d5bfd" DesignTimeRectangle="1272, 708, 557, 43" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='INPUT' aaname='Login' /&gt;" Guid="d5406fd0-3531-46f2-8edb-23a7e65e50d8" InformativeScreenshot="221e7b628df4008c84091b017c507b6b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*NJCourts*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None" />
+                        </uix:NClick.Target>
+                        <uix:NClick.VerifyOptions>
+                          <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                            <uix:VerifyExecutionOptions.Retry>
+                              <InArgument x:TypeArguments="x:Boolean" />
+                            </uix:VerifyExecutionOptions.Retry>
+                            <uix:VerifyExecutionOptions.Timeout>
+                              <InArgument x:TypeArguments="x:Double" />
+                            </uix:VerifyExecutionOptions.Timeout>
+                          </uix:VerifyExecutionOptions>
+                        </uix:NClick.VerifyOptions>
+                      </uix:NClick>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;checking if login was success&quot;]" />
+                      <uix:NCheckState sap2010:Annotation.AnnotationText="Check for Nj Courts Tile" DisplayName="Check for Nj Courts Tile" Exists="[alreadyLoggedIn]" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="416,79.2" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="edb06ab3-aefb-4a27-9afa-7f2dcb6d71c9" Timeout="[longWaitTime]" Version="V4">
+                        <uix:NCheckState.IfExists>
+                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,230.4" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,168.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Nj court tile found&quot;]" />
+                          </Sequence>
+                        </uix:NCheckState.IfExists>
+                        <uix:NCheckState.IfNotExists>
+                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="449.6,176.8" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Throw Exception="[New SystemException(&quot;unable to log in&quot;)]" sap:VirtualizedContainerService.HintSize="416,115.2" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                          </Sequence>
+                        </uix:NCheckState.IfNotExists>
+                        <uix:NCheckState.Target>
+                          <uix:TargetAnchorable BrowserURL="portal-cloud.njcourts.gov/prweb/PRAuth/app/ESSOPortal/yq-No0lmafOGrDifQdN4Pahs104wZlR3*/!STANDARD" CVScreenId="21463fc9-ec2a-426c-879d-36a46ec018a9" DesignTimeRectangle="314, 249, 424, 27" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='RULE_KEY' innertext='New Jersey Courts - Portal Home Page' /&gt;" Guid="64b57d71-da20-4b2d-b862-db450bdbb3bb" InformativeScreenshot="7c1b72295604139e0d605897b223c81e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='*' title='*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="None" />
+                        </uix:NCheckState.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NCheckState>
+                    </Sequence>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="483.2,89.6" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </If.Else>
+              </If>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="NavigateToCivilSearchPage" sap:VirtualizedContainerService.HintSize="1056,168.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Project\NavigateToCivilSearchPage.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:Double" x:Key="longWaitTime">[longWaitTime]</InArgument>
+                  <InArgument x:TypeArguments="x:Double" x:Key="shortWaitTime">[shortWaitTime]</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="-1929, -9, 1938, 1038" BrowserType="Chrome" IconBase64="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" sap2010:WorkflowViewState.IdRef="TargetApp_1" InformativeScreenshot="e92278540e17d60a4a2133edc2b3b5d9.jpg" Selector="&lt;html app='chrome.exe' title='NJCourts Online: Login' /&gt;" Url="https://portal-cloud.njcourts.gov/prweb/PRAuth/CloudSAMLAuth?AppName=ESSO" Version="V2" />
+        </uix:NApplicationCard.TargetApp>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </uix:NApplicationCard>
+    </Sequence>
+  </Sequence>
+</Activity>

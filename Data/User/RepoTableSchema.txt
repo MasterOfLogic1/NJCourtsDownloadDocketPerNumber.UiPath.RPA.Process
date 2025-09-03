@@ -1,0 +1,1 @@
+(sheriffno VARCHAR(955), fullname VARCHAR(955), firstname VARCHAR(955), lastname VARCHAR(955), street VARCHAR(955), city VARCHAR(955), state VARCHAR(955), zipcode VARCHAR(955))

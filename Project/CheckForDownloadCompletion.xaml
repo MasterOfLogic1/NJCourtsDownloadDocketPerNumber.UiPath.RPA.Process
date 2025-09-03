@@ -1,0 +1,198 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="CheckForFilesToDownload" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="ExternalDictionary" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="awaitDownloadList" Type="InOutArgument(scg:List(x:String))" />
+    <x:Property Name="dumpsSubFolderPath" Type="InArgument(x:String)" />
+    <x:Property Name="dowloadStateHanger" Type="InOutArgument(scg:Dictionary(x:String, x:Boolean))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>837,1611</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>CheckForFilesToDownload_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="44">
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="48">
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Waits for x number of time while checking if download is successfully . at any point of during the wait if the file is found in the chrome browser it is immediatley moved to the dumps and marked as succesfully. this is downe until the wait time is exceeded or until all files found on the portal have been moved to the dumps folder" DisplayName="CheckForFilesToDownload" sap:VirtualizedContainerService.HintSize="847,1546" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="errorMessage" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Waits for x number of time while checking if download is successfully . at any point of during the wait if the file is found in the chrome browser it is immediatley moved to the dumps and marked as succesfully. this is downe until the wait time is exceeded or until all files found on the portal have been moved to the dumps folder" Code="Try &#xA;Dim StartTime As TimeSpan = DateTime.Now.TimeOfDay&#xA;Dim CurrentTime As TimeSpan = StartTime&#xA;Dim n As Int32 = awaitDownloadList.Count&#xA;If awaitDownloadList IsNot Nothing AndAlso awaitDownloadList.Count &gt; 0 Then&#xA;&#x9;Console.WriteLine(&quot;downloading files.................. &quot;)&#xA;While ((CurrentTime - StartTime).TotalMinutes &lt;= (MaximumCheckTime*n))&#xA;&#x9;Dim tempList As Object() = awaitDownloadList.ToArray()&#xA;&#x9;If tempList IsNot Nothing AndAlso tempList.Count &gt; 0 Then&#xA;&#x9;&#x9;For Each expectedFilePathInDumps As String In tempList&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;Dim SourceFilePath As String= Path.Combine(dumpsSubFolderPath,Path.GetFileName(expectedFilePathInDumps))&#xA;&#x9;&#x9;&#x9;If File.Exists(SourceFilePath) Then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine(&quot;File &quot;+Path.GetFileName(expectedFilePathInDumps)+&quot; downloaded&quot;)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;'remove file from download list since it has been downloaded&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;awaitDownloadList.Remove(expectedFilePathInDumps)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;dowloadStateHanger.Remove(Path.GetFileName(expectedFilePathInDumps))&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Console.WriteLine(&quot;downloading files.................. &quot;)&#xA;&#x9;&#x9;&#x9;&#x9;End If&#xA;&#x9;Next&#xA;Else&#xA;&#x9;'exit while because there are no items again in download list&#xA;&#x9;Console.WriteLine(&quot;exit while because there are no items again in download list&quot;)&#xA;Exit While&#x9;&#xA;End If&#xA;CurrentTime = DateTime.Now.TimeOfDay&#xA;End While&#xA;End If&#xA;Catch ex As Exception&#xA;&#x9;errorMessage = ex.Message&#xA;End Try" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="805,281" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+      <ui:InvokeCode.Arguments>
+        <InArgument x:TypeArguments="x:Double" x:Key="MaximumCheckTime">[CDbl(in_Config("MaximumCheckTime"))]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="dumpsSubFolderPath">[dumpsSubFolderPath]</InArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="errorMessage">[errorMessage]</InOutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="DumpsFolderPath">[in_Config("DumpsFolderPath").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_WaitTime">[CInt(in_Config("TimeForDownloadFileToIntegrate"))]</InArgument>
+        <InOutArgument x:TypeArguments="scg:List(x:String)" x:Key="awaitDownloadList">[awaitDownloadList]</InOutArgument>
+        <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Boolean)" x:Key="dowloadStateHanger">[dowloadStateHanger]</InOutArgument>
+      </ui:InvokeCode.Arguments>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:InvokeCode>
+    <If Condition="[String.IsNullOrEmpty(errorMessage)]" sap:VirtualizedContainerService.HintSize="805,1076" sap2010:WorkflowViewState.IdRef="If_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Action completed&quot;]" />
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Send Error Mail" sap:VirtualizedContainerService.HintSize="426,918" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="mailSubject" />
+            <Variable x:TypeArguments="x:String" Name="mailRecipientTo" />
+            <Variable x:TypeArguments="x:String" Name="mailRecipientCc" />
+            <Variable x:TypeArguments="x:String" Name="mailMessage" />
+            <Variable x:TypeArguments="x:String" Name="titleOfEmail" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="384,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[&quot;Sending error email : &quot;+errorMessage]" />
+          <ui:ReadTextFile File="{x:Null}" Content="[mailMessage]" DisplayName="Read Email Template #7" FileName="Data\EmailTemplates\01General_ErrorNotification.txt" sap:VirtualizedContainerService.HintSize="384,80.6666666666667" sap2010:WorkflowViewState.IdRef="ReadTextFile_2" />
+          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="384,220" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+            <ui:MultipleAssign.AssignOperations>
+              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[mailSubject]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">[in_Config("ProcessName").ToString+" [" + DateTime.Now.ToString("dd-MM-yyyy") + "]: Error Notification"]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[mailRecipientTo]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">[in_Config("error_Email").ToString]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[mailRecipientCc]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">[in_Config("error_EmailCc").ToString]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[titleOfEmail]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">[in_Config("ProcessName").ToString+" : Error Notifcation"]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[mailMessage]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">[mailMessage.Replace("errorMessage",errorMessage)]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+              </scg:List>
+            </ui:MultipleAssign.AssignOperations>
+          </ui:MultipleAssign>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="384,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="MOLStandardFramework/Send_Email_Using_Outlook.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_MailSubject">[mailSubject]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_MailRecipientsTo">[mailRecipientTo]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_MailRecipientsCc">[mailRecipientCc]</InArgument>
+              <InArgument x:TypeArguments="s:String[]" x:Key="in_MailAttachments" />
+              <InArgument x:TypeArguments="x:String" x:Key="in_MailMessage">[mailMessage]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_TitleOfEmail">[titleOfEmail]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:LogMessage DisplayName="Log Main Folders Validation Error" sap:VirtualizedContainerService.HintSize="384,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Fatal" Message="[errorMessage]" />
+          <Throw DisplayName="Throw BRE" Exception="[new BusinessRuleException(errorMessage)]" sap:VirtualizedContainerService.HintSize="384,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
+        </Sequence>
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>

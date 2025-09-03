@@ -1,0 +1,99 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="TransferLeadsDataToRepositoryInLogs" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="LeadsDataLibrary" Type="InOutArgument(scg:Dictionary(x:String, s:Object[]))" />
+    <x:Property Name="repositoryLogFilePath" Type="InArgument(x:String)" />
+    <x:Property Name="TransactionItem" Type="InArgument(x:String)" />
+    <x:Property Name="LogFolderPath" Type="InArgument(x:String)" />
+    <x:Property Name="DumpsFolderPath" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>793.333333333333,466</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>TransferLeadsDataToRepositoryInLogs_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="TransferLeadsDataToRepositoryInLogs" sap:VirtualizedContainerService.HintSize="376,256" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="errorMessage" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Try&#xA;Dim  docketNumber As Object = LeadsDataLibrary(TransactionItem)(LeadsDataLibrary(TransactionItem).Length-1)&#xA;&#xA;If docketNumber IsNot Nothing AndAlso Not String.IsNullOrEmpty(docketNumber.ToString) Then&#xA;Console.WriteLine(&quot;docket number was &quot;+docketNumber.ToString)&#xA;Dim logfilePath As String = Path.Combine(LogFolderPath,&quot;DownloadLog_&quot;+docketNumber.ToString+&quot;.txt&quot;)&#xA;If (File.Exists(logfilePath) AndAlso File.ReadAllLines(logfilePath).Where(Function(x) Not String.IsNullOrWhiteSpace(x)).Where(Function(x) Not File.Exists(Path.Combine(DumpsFolderPath,x))).Count = 0) Then&#xA;Dim LeadsData As String = String.Join(&quot;|&quot;,LeadsDataLibrary(TransactionItem))&#xA;If File.Exists(repositoryLogFilePath) Then&#xA;&#x9;&#x9;File.AppendAllText(repositoryLogFilePath, Environment.NewLine +LeadsData)&#xA;Else&#xA;&#x9;&#x9;File.WriteAllText(repositoryLogFilePath,LeadsData)&#xA;End If&#xA;Else&#xA;Console.WriteLine(&quot;No attachement downloaded for &quot;+docketNumber.ToString)&#x9;&#xA;End If&#xA;End If&#xA;&#xA;LeadsDataLibrary.Remove(TransactionItem)&#xA;Console.WriteLine(TransactionItem+&quot; removed from library&quot;)&#xA;Catch ex As Exception&#xA;&#x9;errorMessage = ex.Message&#xA;End Try" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="334,164" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+      <ui:InvokeCode.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key=" repositoryLogFilePath">[repositoryLogFilePath]</InArgument>
+        <InOutArgument x:TypeArguments="scg:Dictionary(x:String, s:Object[])" x:Key="LeadsDataLibrary">[LeadsDataLibrary]</InOutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="TransactionItem">[TransactionItem]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="LogFolderPath">[LogFolderPath]</InArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="errorMessage">[errorMessage]</InOutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="DumpsFolderPath">[DumpsFolderPath]</InArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
+  </Sequence>
+</Activity>

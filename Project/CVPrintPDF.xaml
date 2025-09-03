@@ -1,0 +1,1145 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="CVPrintPDF" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="962.4,1280" sap2010:WorkflowViewState.IdRef="CVPrintPDF_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="CVPrintPDF" sap:VirtualizedContainerService.HintSize="1234,846" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" ScrollOffset="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="ebe84d7b-1f51-4ad1-90f8-c58fded45ec8" DisplayName="CV Screen Scope 'pane'" sap:VirtualizedContainerService.HintSize="434,823" sap2010:WorkflowViewState.IdRef="CVScope_3" SendOnPremData="False" Version="V6">
+      <p:CVScope.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="400,57" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <TryCatch.Try>
+                <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="416,268" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" DelayScreenshotAfterScroll="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Icon (1840,17,23,22)&quot;]" DesignTimeCacheId="ebe84d7b-1f51-4ad1-90f8-c58fded45ec8" DesignTimeScaleFactor="1" DisplayName="CV Click - Icon" sap:VirtualizedContainerService.HintSize="382,208" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_3" InformativeScreenshot="0ad6edf28712afa3749ef8f70c17f3a6" KeyModifiers="None" MouseButton="BTN_LEFT" NumberOfScrolls="2" ScrollDirection="None" Version="V6">
+                    <p:CvClickWithDescriptor.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </p:CvClickWithDescriptor.CursorPosition>
+                    <p:CvClickWithDescriptor.DesignTimeDescriptor>
+                      <uc:CvDescriptor Id="be6fac1d-ab7a-4e38-94c6-db343db26cc0">
+                        <uc:CvDescriptor.Target>
+                          <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1840, 17, 23, 22" ElementType="Icon" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABcAAAAWCAYAAAArdgcFAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADHSURBVEhL7ZPBCYQwEEW3sJRhKbnkbAcejGg1gg0IOeVgakgFs3xBGNfZOIsIe/DwYMj3P4KOL2MM3cUjFynKc84qpC44lU/TRN57EWSX5G3bihlA9j9yay2FENbSL6CDLncd5MuyUEqJ+r4X37PEMAxrL8a4cx3kuEXXdbuzEvM8k3OOmqZZuzwT5bjN5/k36rqmqqr08u0jYtaAZ9Xybbf5LLHtOeZxHHVyjmYVOTw/yDlauZSBU/mtv78GqQuK8qs8cgFDb/syPhyhmUhYAAAAAElFTkSuQmCC" />
+                        </uc:CvDescriptor.Target>
+                      </uc:CvDescriptor>
+                    </p:CvClickWithDescriptor.DesignTimeDescriptor>
+                    <p:CvClickWithDescriptor.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="eff33dbd-9439-444c-b2f4-4b3e39b14d18">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </p:CvClickWithDescriptor.Target>
+                  </p:CvClickWithDescriptor>
+                </Sequence>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Throw Exception="[New SystemException(&quot;print icon on pdf viewer was not seen&quot;)]" sap:VirtualizedContainerService.HintSize="382,113" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                    </Sequence>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+              <TryCatch.Finally>
+                <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </TryCatch.Finally>
+            </TryCatch>
+            <p:CvSelectItemWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DeselectAfter="{x:Null}" InRegion="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" Descriptor="[&quot;Target: InputBox (922,142,196,36)&quot; +&#xA;&quot;Anchor: Text 'Destination' (778,154,68,12)&quot;]" DesignTimeCacheId="f53d97c2-803e-4881-8877-4dcea5f43462" DesignTimeScaleFactor="1.5" DisplayName="CV Dropdown Select - InputBox" EmptyField="False" sap:VirtualizedContainerService.HintSize="400,217" sap2010:WorkflowViewState.IdRef="CvSelectItemWithDescriptor_1" InformativeScreenshot="560369d932935a4114ff37d6bb12d0f5" NumberOfScrolls="2" ScrollDirection="None" Text="[&quot;Save as PDF&quot;]" TimeoutMS="3000" Version="V6">
+              <p:CvSelectItemWithDescriptor.DesignTimeDescriptor>
+                <uc:CvDescriptor Id="641ea2ce-2dec-4e16-97ed-afddb2c24c90">
+                  <uc:CvDescriptor.Anchors>
+                    <x:Array Type="uc:CvElementDescriptor">
+                      <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="778, 154, 68, 12" ElementType="Text" Text="Destination" />
+                    </x:Array>
+                  </uc:CvDescriptor.Anchors>
+                  <uc:CvDescriptor.Target>
+                    <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="922, 142, 196, 36" ElementType="InputBox" />
+                  </uc:CvDescriptor.Target>
+                </uc:CvDescriptor>
+              </p:CvSelectItemWithDescriptor.DesignTimeDescriptor>
+              <p:CvSelectItemWithDescriptor.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="f24bc6bf-db19-4d90-986d-edeee1b32713">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </p:CvSelectItemWithDescriptor.Target>
+            </p:CvSelectItemWithDescriptor>
+            <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" DelayScreenshotAfterScroll="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text 'Save' (996,616,30,12)&quot; +&#xA;&quot;Anchor: Button (976,606,69,34)&quot; +&#xA;&quot;Anchor: Text 'Cancel' (1066,616,42,12)&quot;]" DesignTimeCacheId="bfc3b3d4-bf4a-4eae-8487-eac3cc534ce0" DesignTimeScaleFactor="1.5" DisplayName="CV Click - Text" sap:VirtualizedContainerService.HintSize="400,208" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_2" InformativeScreenshot="f8eb873b08fdcff2bb603c4a3195735d" KeyModifiers="None" MouseButton="BTN_LEFT" NumberOfScrolls="2" ScrollDirection="None" TimeoutMS="3000" Version="V6">
+              <p:CvClickWithDescriptor.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </p:CvClickWithDescriptor.CursorPosition>
+              <p:CvClickWithDescriptor.DesignTimeDescriptor>
+                <uc:CvDescriptor Id="5c263f4f-26c9-44bb-8534-7034d5f5712b">
+                  <uc:CvDescriptor.Anchors>
+                    <x:Array Type="uc:CvElementDescriptor">
+                      <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="976, 606, 69, 34" ElementType="Button" />
+                      <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1066, 616, 42, 12" ElementType="Text" Text="Cancel" />
+                    </x:Array>
+                  </uc:CvDescriptor.Anchors>
+                  <uc:CvDescriptor.Target>
+                    <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="996, 616, 30, 12" ElementType="Text" Text="Save" />
+                  </uc:CvDescriptor.Target>
+                </uc:CvDescriptor>
+              </p:CvClickWithDescriptor.DesignTimeDescriptor>
+              <p:CvClickWithDescriptor.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="4c6f675e-c16c-4700-adb3-418d79501eaf">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </p:CvClickWithDescriptor.Target>
+            </p:CvClickWithDescriptor>
+          </Sequence>
+        </ActivityAction>
+      </p:CVScope.Body>
+      <p:CVScope.DesignTimeCacheContainer>
+        <uc:CvCacheContainer>
+          <uc:CvCacheContainer.Caches>
+            <scg:List x:TypeArguments="uc:CVCache" Capacity="4">
+              <uc:CVCache DataSent="False" DisplayName="Screen CV Click - Icon (Main)" Id="ebe84d7b-1f51-4ad1-90f8-c58fded45ec8" InformativeScreenshot="5942915a073b98e796cea4d756c8a386" LogicalPosition="0, 0" OcrText="civilCaseSummary.faces 1 / 18 - 100% + B ^ SWC-F-002515-25 03/05/2025 10:49:23 AM Pg 1 of 13 Trans ID: CHC202573893 ^ Eric P. Kelner, Esq. (Bar Id No. 028542002) HILL WALLACK LLP 21 Roszel Road 1 P.O. Box 5226 Princeton, New Jersey 08543-5226 (609) 924-0808 Attorneys for Plaintiff Our File No. 17511-6243/bp Carrington Mortgage Services, LLC, SUPERIOR COURT OF NEW JERSEY CHANCERY DIVISION Plaintiff, CAMDEN COUNTY vs. 2 DOCKET NO. Luis Olivo-Ruiz; Ana Iris Lebron; Mr./Mrs. Luis Olivo-Ruiz, spouse or civil union Civil Action partner of Luis Olivo-Ruiz; Mr./Mrs. Ana Iris Lebron, spouse or civil union COMPLAINT FOR FORECLOSURE partner of Ana Iris Lebron; and United States of America, Defendants. 3 Carrington Mortgage Services, LLC (the &quot;Plaintiff'), having a place of business at 1600 South Douglass Road, Suite 200-A, Anaheim, CA 92806, the Plaintiff in the above-entitled cause of action, says: FIRST COUNT 1. On the date set forth in 1-a following, the obligor named in 1-b following, in the 4 sum set forth in 1-c following executed to said obligee set forth in 1-d following, an obligation in the form of a Note (the &quot;Note&quot;) dated as set forth in 1-a following, to secure the sum set forth in 1-c following, payable on the date set forth in 1-e following, with interest at the rate per annum set forth in 1-f following, payable as set forth below. 1a Data* Aumnet 16 7010" Position="0, 0" ScreenshotGuid="d246d4cb-a51a-47b1-bc9b-954235e97d0b" ServerVersion="24.10.5.0">
+                <uc:CVCache.CvAnchorRelations>
+                  <scg:List x:TypeArguments="uc:AnchorRelationInfo" Capacity="8">
+                    <uc:AnchorRelationInfo IsTargetText="True" Target="60">
+                      <uc:AnchorRelationInfo.Anchors>
+                        <x:Array Type="x:Int32">
+                          <x:Int32>61</x:Int32>
+                          <x:Int32>62</x:Int32>
+                        </x:Array>
+                      </uc:AnchorRelationInfo.Anchors>
+                    </uc:AnchorRelationInfo>
+                    <uc:AnchorRelationInfo IsTargetText="True" Target="19">
+                      <uc:AnchorRelationInfo.Anchors>
+                        <x:Array Type="x:Int32">
+                          <x:Int32>17</x:Int32>
+                          <x:Int32>18</x:Int32>
+                        </x:Array>
+                      </uc:AnchorRelationInfo.Anchors>
+                    </uc:AnchorRelationInfo>
+                    <uc:AnchorRelationInfo IsTargetText="True" Target="82">
+                      <uc:AnchorRelationInfo.Anchors>
+                        <x:Array Type="x:Int32">
+                          <x:Int32>96</x:Int32>
+                          <x:Int32>97</x:Int32>
+                          <x:Int32>98</x:Int32>
+                        </x:Array>
+                      </uc:AnchorRelationInfo.Anchors>
+                    </uc:AnchorRelationInfo>
+                    <uc:AnchorRelationInfo IsTargetText="True" Target="230">
+                      <uc:AnchorRelationInfo.Anchors>
+                        <x:Array Type="x:Int32">
+                          <x:Int32>228</x:Int32>
+                        </x:Array>
+                      </uc:AnchorRelationInfo.Anchors>
+                    </uc:AnchorRelationInfo>
+                    <uc:AnchorRelationInfo IsTargetText="True" Target="42">
+                      <uc:AnchorRelationInfo.Anchors>
+                        <x:Array Type="x:Int32">
+                          <x:Int32>39</x:Int32>
+                          <x:Int32>40</x:Int32>
+                          <x:Int32>41</x:Int32>
+                          <x:Int32>42</x:Int32>
+                        </x:Array>
+                      </uc:AnchorRelationInfo.Anchors>
+                    </uc:AnchorRelationInfo>
+                    <uc:AnchorRelationInfo IsTargetText="False" Target="11">
+                      <uc:AnchorRelationInfo.Anchors>
+                        <x:Array Type="x:Int32">
+                          <x:Int32>5</x:Int32>
+                        </x:Array>
+                      </uc:AnchorRelationInfo.Anchors>
+                    </uc:AnchorRelationInfo>
+                    <uc:AnchorRelationInfo IsTargetText="False" Target="12">
+                      <uc:AnchorRelationInfo.Anchors>
+                        <x:Array Type="x:Int32">
+                          <x:Int32>1</x:Int32>
+                        </x:Array>
+                      </uc:AnchorRelationInfo.Anchors>
+                    </uc:AnchorRelationInfo>
+                    <uc:AnchorRelationInfo IsTargetText="True" Target="105">
+                      <uc:AnchorRelationInfo.Anchors>
+                        <x:Array Type="x:Int32">
+                          <x:Int32>99</x:Int32>
+                          <x:Int32>100</x:Int32>
+                          <x:Int32>101</x:Int32>
+                          <x:Int32>102</x:Int32>
+                          <x:Int32>103</x:Int32>
+                        </x:Array>
+                      </uc:AnchorRelationInfo.Anchors>
+                    </uc:AnchorRelationInfo>
+                  </scg:List>
+                </uc:CVCache.CvAnchorRelations>
+                <uc:CVCache.CvTables>
+                  <x:Array Type="uc:CvTableInfo">
+                    <uc:CvTableInfo>
+                      <uc:CvTableInfo.Columns>
+                        <x:Array Type="x:Int32">
+                          <x:Int32>822</x:Int32>
+                          <x:Int32>936</x:Int32>
+                          <x:Int32>1137</x:Int32>
+                          <x:Int32>1206</x:Int32>
+                          <x:Int32>1395</x:Int32>
+                        </x:Array>
+                      </uc:CvTableInfo.Columns>
+                      <uc:CvTableInfo.Rows>
+                        <x:Array Type="x:Int32">
+                          <x:Int32>57</x:Int32>
+                          <x:Int32>79</x:Int32>
+                        </x:Array>
+                      </uc:CvTableInfo.Rows>
+                    </uc:CvTableInfo>
+                  </x:Array>
+                </uc:CVCache.CvTables>
+                <uc:CVCache.CvUiElements>
+                  <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="64">
+                    <uc:CvElementInfo Category="Icon" Region="20, 18, 23, 19" />
+                    <uc:CvElementInfo Category="Icon" Region="1068, 17, 24, 23" />
+                    <uc:CvElementInfo Category="ArrowButton" Region="1902, 935, 18, 18" />
+                    <uc:CvElementInfo Category="Icon" Region="1806, 17, 20, 20" />
+                    <uc:CvElementInfo Category="ArrowButton" Region="283, 54, 19, 19" />
+                    <uc:CvElementInfo Category="Icon" Region="1038, 16, 20, 22" />
+                    <uc:CvElementInfo Category="ArrowButton" Region="283, 935, 18, 18" />
+                    <uc:CvElementInfo Category="ArrowButton" Region="1903, 54, 17, 19" />
+                    <uc:CvElementInfo Category="Icon" Region="1879, 17, 17, 22" />
+                    <uc:CvElementInfo Category="Icon" Region="1840, 17, 23, 22" />
+                    <uc:CvElementInfo Category="Icon" Region="990, 18, 19, 19" />
+                    <uc:CvElementInfo Category="InputBox" Region="934, 16, 48, 23" />
+                    <uc:CvElementInfo Category="InputBox" Region="821, 15, 28, 24" />
+                    <uc:CvElementInfo Category="ArrowButton" Region="133, 797, 18, 18" />
+                    <uc:CvElementInfo Category="Cell" Region="822, 57, 114, 22" />
+                    <uc:CvElementInfo Category="Cell" Region="936, 57, 201, 22" />
+                    <uc:CvElementInfo Category="Cell" Region="1137, 57, 69, 22" />
+                    <uc:CvElementInfo Category="Cell" Region="1206, 57, 189, 22" />
+                    <uc:CvElementInfo Category="MinimizeButton" Confidence="Runtime" Region="904, 17, 23, 20" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="133, 797, 18, 18" />
+                    <uc:CvElementInfo Category="MaximizeButton" Confidence="Runtime" Region="1840, 16, 24, 23" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="821, 15, 28, 24" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="136, 231, 11, 16" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="134, 419, 16, 18" />
+                    <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="980, 15, 41, 26" />
+                    <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="934, 15, 48, 24" />
+                    <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="821, 15, 28, 24" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="904, 19, 22, 17" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="134, 609, 16, 17" />
+                    <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="895, 14, 39, 26" />
+                    <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="134, 419, 17, 19" />
+                    <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="779, 561, 336, 31" />
+                    <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="134, 420, 16, 17" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="88, 459, 109, 139" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="86, 76, 111, 145" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="85, 647, 115, 142" />
+                  </scg:List>
+                </uc:CVCache.CvUiElements>
+                <uc:CVCache.OcrTexts>
+                  <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="233">
+                    <uc:OcrTextInfo Region="62, 22, 152, 16" Text="civilCaseSummary.faces" />
+                    <uc:OcrTextInfo Region="830, 22, 8, 12" Text="1" />
+                    <uc:OcrTextInfo Region="848, 22, 9, 14" Text="/" />
+                    <uc:OcrTextInfo Region="859, 22, 16, 12" Text="18" />
+                    <uc:OcrTextInfo Region="908, 19, 14, 15" Text="-" />
+                    <uc:OcrTextInfo Region="940, 22, 35, 12" Text="100%" />
+                    <uc:OcrTextInfo Region="993, 21, 13, 13" Text="+" />
+                    <uc:OcrTextInfo Region="1043, 20, 10, 14" Text="B" />
+                    <uc:OcrTextInfo Region="286, 59, 11, 8" Text="^" />
+                    <uc:OcrTextInfo Region="822, 63, 126, 14" Text="SWC-F-002515-25" />
+                    <uc:OcrTextInfo Region="958, 63, 76, 15" Text="03/05/2025" />
+                    <uc:OcrTextInfo Region="1036, 63, 59, 14" Text="10:49:23" />
+                    <uc:OcrTextInfo Region="1097, 64, 23, 13" Text="AM" />
+                    <uc:OcrTextInfo Region="1132, 63, 19, 17" Text="Pg" />
+                    <uc:OcrTextInfo Region="1155, 63, 7, 14" Text="1" />
+                    <uc:OcrTextInfo Region="1166, 63, 15, 14" Text="of" />
+                    <uc:OcrTextInfo Region="1183, 63, 17, 14" Text="13" />
+                    <uc:OcrTextInfo Region="1210, 63, 40, 14" Text="Trans" />
+                    <uc:OcrTextInfo Region="1252, 63, 20, 14" Text="ID:" />
+                    <uc:OcrTextInfo Region="1275, 63, 107, 14" Text="CHC202573893" />
+                    <uc:OcrTextInfo Region="1906, 59, 11, 8" Text="^" />
+                    <uc:OcrTextInfo Region="790, 175, 27, 14" Text="Eric" />
+                    <uc:OcrTextInfo Region="820, 175, 15, 14" Text="P." />
+                    <uc:OcrTextInfo Region="837, 175, 49, 16" Text="Kelner," />
+                    <uc:OcrTextInfo Region="889, 175, 28, 17" Text="Esq." />
+                    <uc:OcrTextInfo Region="921, 175, 31, 17" Text="(Bar" />
+                    <uc:OcrTextInfo Region="953, 175, 15, 14" Text="Id" />
+                    <uc:OcrTextInfo Region="970, 175, 25, 14" Text="No." />
+                    <uc:OcrTextInfo Region="998, 175, 79, 17" Text="028542002)" />
+                    <uc:OcrTextInfo Region="790, 194, 42, 14" Text="HILL" />
+                    <uc:OcrTextInfo Region="834, 194, 87, 14" Text="WALLACK" />
+                    <uc:OcrTextInfo Region="923, 194, 32, 14" Text="LLP" />
+                    <uc:OcrTextInfo Region="790, 212, 16, 14" Text="21" />
+                    <uc:OcrTextInfo Region="810, 212, 45, 14" Text="Roszel" />
+                    <uc:OcrTextInfo Region="857, 212, 35, 14" Text="Road" />
+                    <uc:OcrTextInfo Region="138, 233, 7, 12" Text="1" />
+                    <uc:OcrTextInfo Region="790, 231, 29, 14" Text="P.O." />
+                    <uc:OcrTextInfo Region="823, 231, 27, 14" Text="Box" />
+                    <uc:OcrTextInfo Region="853, 231, 34, 14" Text="5226" />
+                    <uc:OcrTextInfo Region="790, 249, 66, 16" Text="Princeton," />
+                    <uc:OcrTextInfo Region="859, 249, 31, 14" Text="New" />
+                    <uc:OcrTextInfo Region="892, 249, 43, 17" Text="Jersey" />
+                    <uc:OcrTextInfo Region="937, 249, 80, 14" Text="08543-5226" />
+                    <uc:OcrTextInfo Region="790, 267, 36, 17" Text="(609)" />
+                    <uc:OcrTextInfo Region="828, 267, 63, 14" Text="924-0808" />
+                    <uc:OcrTextInfo Region="789, 287, 65, 16" Text="Attorneys" />
+                    <uc:OcrTextInfo Region="857, 286, 21, 14" Text="for" />
+                    <uc:OcrTextInfo Region="879, 286, 56, 14" Text="Plaintiff" />
+                    <uc:OcrTextInfo Region="789, 304, 28, 14" Text="Our" />
+                    <uc:OcrTextInfo Region="819, 304, 26, 14" Text="File" />
+                    <uc:OcrTextInfo Region="847, 304, 25, 14" Text="No." />
+                    <uc:OcrTextInfo Region="876, 304, 99, 17" Text="17511-6243/bp" />
+                    <uc:OcrTextInfo Region="790, 347, 70, 18" Text="Carrington" />
+                    <uc:OcrTextInfo Region="863, 347, 64, 18" Text="Mortgage" />
+                    <uc:OcrTextInfo Region="929, 347, 60, 16" Text="Services," />
+                    <uc:OcrTextInfo Region="991, 347, 36, 16" Text="LLC," />
+                    <uc:OcrTextInfo Region="1122, 347, 79, 14" Text="SUPERIOR" />
+                    <uc:OcrTextInfo Region="1202, 347, 56, 14" Text="COURT" />
+                    <uc:OcrTextInfo Region="1260, 347, 23, 14" Text="OF" />
+                    <uc:OcrTextInfo Region="1285, 347, 38, 14" Text="NEW" />
+                    <uc:OcrTextInfo Region="1325, 347, 60, 14" Text="JERSEY" />
+                    <uc:OcrTextInfo Region="1121, 366, 90, 14" Text="CHANCERY" />
+                    <uc:OcrTextInfo Region="1213, 366, 73, 14" Text="DIVISION" />
+                    <uc:OcrTextInfo Region="934, 384, 58, 16" Text="Plaintiff," />
+                    <uc:OcrTextInfo Region="1121, 384, 71, 14" Text="CAMDEN" />
+                    <uc:OcrTextInfo Region="1195, 384, 68, 14" Text="COUNTY" />
+                    <uc:OcrTextInfo Region="790, 407, 19, 10" Text="vs." />
+                    <uc:OcrTextInfo Region="138, 422, 9, 12" Text="2" />
+                    <uc:OcrTextInfo Region="1122, 421, 66, 14" Text="DOCKET" />
+                    <uc:OcrTextInfo Region="1190, 421, 28, 14" Text="NO." />
+                    <uc:OcrTextInfo Region="790, 439, 30, 14" Text="Luis" />
+                    <uc:OcrTextInfo Region="822, 439, 78, 15" Text="Olivo-Ruiz;" />
+                    <uc:OcrTextInfo Region="902, 440, 29, 13" Text="Ana" />
+                    <uc:OcrTextInfo Region="933, 439, 24, 14" Text="Iris" />
+                    <uc:OcrTextInfo Region="959, 439, 52, 15" Text="Lebron;" />
+                    <uc:OcrTextInfo Region="790, 458, 58, 14" Text="Mr./Mrs." />
+                    <uc:OcrTextInfo Region="852, 458, 30, 14" Text="Luis" />
+                    <uc:OcrTextInfo Region="883, 458, 78, 16" Text="Olivo-Ruiz," />
+                    <uc:OcrTextInfo Region="963, 462, 46, 13" Text="spouse" />
+                    <uc:OcrTextInfo Region="1011, 462, 16, 10" Text="or" />
+                    <uc:OcrTextInfo Region="1029, 458, 30, 14" Text="civil" />
+                    <uc:OcrTextInfo Region="1061, 458, 38, 14" Text="union" />
+                    <uc:OcrTextInfo Region="1233, 458, 33, 14" Text="Civil" />
+                    <uc:OcrTextInfo Region="1269, 459, 45, 13" Text="Action" />
+                    <uc:OcrTextInfo Region="790, 478, 47, 15" Text="partner" />
+                    <uc:OcrTextInfo Region="839, 476, 17, 14" Text="of" />
+                    <uc:OcrTextInfo Region="856, 476, 30, 14" Text="Luis" />
+                    <uc:OcrTextInfo Region="889, 476, 78, 16" Text="Olivo-Ruiz;" />
+                    <uc:OcrTextInfo Region="790, 495, 59, 14" Text="Mr./Mrs." />
+                    <uc:OcrTextInfo Region="851, 496, 29, 13" Text="Ana" />
+                    <uc:OcrTextInfo Region="882, 495, 23, 14" Text="Iris" />
+                    <uc:OcrTextInfo Region="908, 495, 51, 16" Text="Lebron," />
+                    <uc:OcrTextInfo Region="962, 499, 45, 13" Text="spouse" />
+                    <uc:OcrTextInfo Region="1009, 499, 16, 10" Text="or" />
+                    <uc:OcrTextInfo Region="1026, 495, 30, 14" Text="civil" />
+                    <uc:OcrTextInfo Region="1059, 495, 38, 14" Text="union" />
+                    <uc:OcrTextInfo Region="1132, 495, 102, 14" Text="COMPLAINT" />
+                    <uc:OcrTextInfo Region="1236, 495, 36, 14" Text="FOR" />
+                    <uc:OcrTextInfo Region="1273, 495, 124, 14" Text="FORECLOSURE" />
+                    <uc:OcrTextInfo Region="790, 515, 47, 15" Text="partner" />
+                    <uc:OcrTextInfo Region="839, 513, 17, 14" Text="of" />
+                    <uc:OcrTextInfo Region="856, 514, 28, 13" Text="Ana" />
+                    <uc:OcrTextInfo Region="887, 513, 23, 14" Text="Iris" />
+                    <uc:OcrTextInfo Region="913, 513, 51, 16" Text="Lebron;" />
+                    <uc:OcrTextInfo Region="966, 513, 26, 14" Text="and" />
+                    <uc:OcrTextInfo Region="790, 531, 45, 14" Text="United" />
+                    <uc:OcrTextInfo Region="837, 531, 40, 14" Text="States" />
+                    <uc:OcrTextInfo Region="879, 531, 17, 14" Text="of" />
+                    <uc:OcrTextInfo Region="897, 532, 60, 14" Text="America," />
+                    <uc:OcrTextInfo Region="934, 568, 78, 14" Text="Defendants." />
+                    <uc:OcrTextInfo Region="138, 611, 8, 12" Text="3" />
+                    <uc:OcrTextInfo Region="837, 611, 71, 18" Text="Carrington" />
+                    <uc:OcrTextInfo Region="912, 611, 64, 18" Text="Mortgage" />
+                    <uc:OcrTextInfo Region="979, 611, 60, 16" Text="Services," />
+                    <uc:OcrTextInfo Region="1042, 611, 32, 14" Text="LLC" />
+                    <uc:OcrTextInfo Region="1077, 611, 27, 17" Text="(the" />
+                    <uc:OcrTextInfo Region="1107, 611, 78, 17" Text="&quot;Plaintiff')," />
+                    <uc:OcrTextInfo Region="1188, 611, 46, 18" Text="having" />
+                    <uc:OcrTextInfo Region="1237, 615, 9, 10" Text="a" />
+                    <uc:OcrTextInfo Region="1249, 611, 35, 18" Text="place" />
+                    <uc:OcrTextInfo Region="1287, 611, 18, 14" Text="of" />
+                    <uc:OcrTextInfo Region="1306, 611, 56, 14" Text="business" />
+                    <uc:OcrTextInfo Region="1365, 613, 14, 12" Text="at" />
+                    <uc:OcrTextInfo Region="1384, 611, 32, 14" Text="1600" />
+                    <uc:OcrTextInfo Region="790, 648, 38, 14" Text="South" />
+                    <uc:OcrTextInfo Region="835, 648, 60, 18" Text="Douglass" />
+                    <uc:OcrTextInfo Region="901, 648, 39, 16" Text="Road," />
+                    <uc:OcrTextInfo Region="946, 648, 35, 14" Text="Suite" />
+                    <uc:OcrTextInfo Region="986, 648, 47, 16" Text="200-A," />
+                    <uc:OcrTextInfo Region="1038, 648, 65, 16" Text="Anaheim," />
+                    <uc:OcrTextInfo Region="1108, 648, 24, 14" Text="CA" />
+                    <uc:OcrTextInfo Region="1138, 648, 45, 16" Text="92806," />
+                    <uc:OcrTextInfo Region="1189, 648, 21, 14" Text="the" />
+                    <uc:OcrTextInfo Region="1216, 648, 56, 14" Text="Plaintiff" />
+                    <uc:OcrTextInfo Region="1276, 648, 14, 14" Text="in" />
+                    <uc:OcrTextInfo Region="1295, 648, 22, 14" Text="the" />
+                    <uc:OcrTextInfo Region="1322, 648, 94, 14" Text="above-entitled" />
+                    <uc:OcrTextInfo Region="790, 689, 37, 10" Text="cause" />
+                    <uc:OcrTextInfo Region="829, 685, 17, 14" Text="of" />
+                    <uc:OcrTextInfo Region="846, 685, 45, 16" Text="action," />
+                    <uc:OcrTextInfo Region="893, 689, 34, 13" Text="says:" />
+                    <uc:OcrTextInfo Region="1048, 722, 48, 14" Text="FIRST" />
+                    <uc:OcrTextInfo Region="1098, 722, 60, 14" Text="COUNT" />
+                    <uc:OcrTextInfo Region="839, 759, 12, 14" Text="1." />
+                    <uc:OcrTextInfo Region="885, 760, 22, 13" Text="On" />
+                    <uc:OcrTextInfo Region="910, 759, 21, 14" Text="the" />
+                    <uc:OcrTextInfo Region="934, 759, 29, 14" Text="date" />
+                    <uc:OcrTextInfo Region="966, 761, 20, 12" Text="set" />
+                    <uc:OcrTextInfo Region="989, 759, 32, 14" Text="forth" />
+                    <uc:OcrTextInfo Region="1025, 759, 14, 14" Text="in" />
+                    <uc:OcrTextInfo Region="1044, 760, 20, 13" Text="1-a" />
+                    <uc:OcrTextInfo Region="1068, 759, 67, 17" Text="following," />
+                    <uc:OcrTextInfo Region="1138, 759, 22, 14" Text="the" />
+                    <uc:OcrTextInfo Region="1163, 759, 49, 17" Text="obligor" />
+                    <uc:OcrTextInfo Region="1214, 759, 45, 14" Text="named" />
+                    <uc:OcrTextInfo Region="1262, 759, 14, 14" Text="in" />
+                    <uc:OcrTextInfo Region="1281, 759, 22, 14" Text="1-b" />
+                    <uc:OcrTextInfo Region="1307, 759, 66, 18" Text="following," />
+                    <uc:OcrTextInfo Region="1377, 759, 14, 14" Text="in" />
+                    <uc:OcrTextInfo Region="1394, 759, 22, 14" Text="the" />
+                    <uc:OcrTextInfo Region="137, 800, 10, 12" Text="4" />
+                    <uc:OcrTextInfo Region="790, 799, 28, 10" Text="sum" />
+                    <uc:OcrTextInfo Region="820, 797, 20, 12" Text="set" />
+                    <uc:OcrTextInfo Region="843, 795, 32, 14" Text="forth" />
+                    <uc:OcrTextInfo Region="878, 795, 14, 14" Text="in" />
+                    <uc:OcrTextInfo Region="896, 795, 20, 14" Text="1-c" />
+                    <uc:OcrTextInfo Region="919, 795, 64, 17" Text="following" />
+                    <uc:OcrTextInfo Region="985, 795, 58, 14" Text="executed" />
+                    <uc:OcrTextInfo Region="1045, 797, 15, 12" Text="to" />
+                    <uc:OcrTextInfo Region="1062, 795, 28, 14" Text="said" />
+                    <uc:OcrTextInfo Region="1092, 795, 49, 17" Text="obligee" />
+                    <uc:OcrTextInfo Region="1143, 797, 20, 12" Text="set" />
+                    <uc:OcrTextInfo Region="1166, 795, 32, 14" Text="forth" />
+                    <uc:OcrTextInfo Region="1200, 795, 15, 14" Text="in" />
+                    <uc:OcrTextInfo Region="1219, 795, 21, 14" Text="1-d" />
+                    <uc:OcrTextInfo Region="1243, 795, 67, 17" Text="following," />
+                    <uc:OcrTextInfo Region="1313, 799, 17, 10" Text="an" />
+                    <uc:OcrTextInfo Region="1332, 795, 66, 17" Text="obligation" />
+                    <uc:OcrTextInfo Region="1402, 795, 14, 14" Text="in" />
+                    <uc:OcrTextInfo Region="789, 832, 22, 14" Text="the" />
+                    <uc:OcrTextInfo Region="814, 832, 32, 14" Text="form" />
+                    <uc:OcrTextInfo Region="849, 832, 17, 14" Text="of" />
+                    <uc:OcrTextInfo Region="867, 836, 9, 10" Text="a" />
+                    <uc:OcrTextInfo Region="878, 832, 33, 14" Text="Note" />
+                    <uc:OcrTextInfo Region="914, 832, 27, 17" Text="(the" />
+                    <uc:OcrTextInfo Region="943, 832, 53, 17" Text="&quot;Note&quot;)" />
+                    <uc:OcrTextInfo Region="998, 832, 36, 14" Text="dated" />
+                    <uc:OcrTextInfo Region="1037, 836, 16, 10" Text="as" />
+                    <uc:OcrTextInfo Region="1055, 834, 20, 12" Text="set" />
+                    <uc:OcrTextInfo Region="1078, 832, 32, 14" Text="forth" />
+                    <uc:OcrTextInfo Region="1113, 832, 14, 14" Text="in" />
+                    <uc:OcrTextInfo Region="1132, 832, 20, 14" Text="1-a" />
+                    <uc:OcrTextInfo Region="1155, 832, 68, 18" Text="following," />
+                    <uc:OcrTextInfo Region="1225, 834, 15, 12" Text="to" />
+                    <uc:OcrTextInfo Region="1243, 836, 42, 10" Text="secure" />
+                    <uc:OcrTextInfo Region="1288, 832, 21, 14" Text="the" />
+                    <uc:OcrTextInfo Region="1312, 836, 28, 10" Text="sum" />
+                    <uc:OcrTextInfo Region="1343, 834, 20, 12" Text="set" />
+                    <uc:OcrTextInfo Region="1366, 832, 32, 14" Text="forth" />
+                    <uc:OcrTextInfo Region="1401, 832, 14, 14" Text="in" />
+                    <uc:OcrTextInfo Region="791, 869, 21, 14" Text="1-c" />
+                    <uc:OcrTextInfo Region="815, 869, 68, 18" Text="following," />
+                    <uc:OcrTextInfo Region="886, 869, 51, 18" Text="payable" />
+                    <uc:OcrTextInfo Region="940, 873, 18, 10" Text="on" />
+                    <uc:OcrTextInfo Region="961, 869, 22, 14" Text="the" />
+                    <uc:OcrTextInfo Region="986, 869, 28, 14" Text="date" />
+                    <uc:OcrTextInfo Region="1017, 871, 20, 12" Text="set" />
+                    <uc:OcrTextInfo Region="1040, 869, 32, 13" Text="forth" />
+                    <uc:OcrTextInfo Region="1076, 869, 14, 14" Text="in" />
+                    <uc:OcrTextInfo Region="1094, 869, 22, 14" Text="1-e" />
+                    <uc:OcrTextInfo Region="1119, 869, 67, 18" Text="following," />
+                    <uc:OcrTextInfo Region="1190, 869, 30, 14" Text="with" />
+                    <uc:OcrTextInfo Region="1223, 869, 49, 14" Text="interest" />
+                    <uc:OcrTextInfo Region="1275, 871, 14, 12" Text="at" />
+                    <uc:OcrTextInfo Region="1291, 869, 21, 14" Text="the" />
+                    <uc:OcrTextInfo Region="1315, 871, 26, 12" Text="rate" />
+                    <uc:OcrTextInfo Region="1345, 873, 22, 13" Text="per" />
+                    <uc:OcrTextInfo Region="1370, 873, 45, 10" Text="annum" />
+                    <uc:OcrTextInfo Region="790, 908, 19, 12" Text="set" />
+                    <uc:OcrTextInfo Region="812, 906, 32, 14" Text="forth" />
+                    <uc:OcrTextInfo Region="847, 906, 13, 14" Text="in" />
+                    <uc:OcrTextInfo Region="865, 906, 20, 14" Text="1-f" />
+                    <uc:OcrTextInfo Region="886, 906, 67, 17" Text="following," />
+                    <uc:OcrTextInfo Region="956, 906, 51, 18" Text="payable" />
+                    <uc:OcrTextInfo Region="1009, 910, 15, 10" Text="as" />
+                    <uc:OcrTextInfo Region="1027, 908, 19, 12" Text="set" />
+                    <uc:OcrTextInfo Region="1049, 906, 32, 14" Text="forth" />
+                    <uc:OcrTextInfo Region="1084, 906, 44, 14" Text="below." />
+                    <uc:OcrTextInfo Region="888, 943, 19, 10" Text="1a" />
+                    <uc:OcrTextInfo Region="934, 943, 36, 10" Text="Data*" />
+                    <uc:OcrTextInfo Region="977, 944, 47, 9" Text="Aumnet" />
+                    <uc:OcrTextInfo Region="1028, 943, 17, 10" Text="16" />
+                    <uc:OcrTextInfo Region="1050, 943, 34, 10" Text="7010" />
+                  </scg:List>
+                </uc:CVCache.OcrTexts>
+              </uc:CVCache>
+              <uc:CVCache DataSent="False" DisplayName="Screen CV Dropdown Select - 'D" Id="f53d97c2-803e-4881-8877-4dcea5f43462" InformativeScreenshot="ea853d550c7c1b684fc415fb20fe87a0" LogicalPosition="0, 0" OcrText="eCourts Civil Case Jacket X civilCaseSummary.faces X + v _ X portal.njcourts.gov/CIVILCaseJacketWeb/pages/civilCaseSummary.faces?cid=1 Incognito SWC-F-012337-23 10/24/2023 8:15:58 AM Pgiof19 Trans ID: CHC2023298574 civilCaseSui Print 26 sheets of paper ERIC P. KELNER, ESQ. #028542002 HILL WALLACK LLP Destination Microsoft Print to PDF 21 Roszel Road P.O. Box 5226 Princeton, New Jersey 08543-5226 (609) ))924-0808 Attomeys for Plaintiff Pages All Our File No. I-4768/sh BANKUNITED, N.A., SUPERIOR COURT OF NEW JERSEY CHANCERY DIVISION Plaintiff, PASSAIC COUNTY vs. DOCKET NO. F- Color Color JONATHAN P. VOLPE; DANA E. QUACKENBUSH N/K/A DANA E. VOLPE: Astion UNITED STATES OF AMERICA: PHILIP PACE: COMPLAINT FOR FORECLOSURE AMERICAN GENERAL FINANCIAL SERVICES; KRISTINE HRUBEC: THOMAS HRUBEC: More settings v CAPITAL CREDIT CORP.: BEST UNIFORM RENTAL INC. VINCENZO R. VIGORITO: STATE OF NEW JERSEY: FICTITIOUS SPOUSE OR CIVIL UNION PARTNER OF JONATHAN P. VOLPE: FICTITIOUS SPOUSE OR CIVIL UNION PARTNER OF DANA QUACKENBUSH N/K/A DANA E. VOLPE; Defendants. BankUnited, N.A., having a place of business at c/o Carrington Mortgage Services, LLC. 1600 South Douglass Road, Sutie 200-A, Anaheim, CA 92806, the Plaintiff in the above-entitled cause of action. says: 103556455, I1 Print Cancel BEST UNIFORM RENTAL INC.;" Position="0, 0" ScaleFactor="1.5" ServerVersion="1">
+                <uc:CVCache.CvUiElements>
+                  <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="54">
+                    <uc:CvElementInfo Category="Button" Region="974, 604, 72, 37" />
+                    <uc:CvElementInfo Category="Button" Region="1051, 606, 74, 34" />
+                    <uc:CvElementInfo Category="Icon" Region="1084, 42, 23, 22" />
+                    <uc:CvElementInfo Category="Button" Region="244, 0, 241, 36" />
+                    <uc:CvElementInfo Category="Icon" Region="1145, 40, 29, 28" />
+                    <uc:CvElementInfo Category="Icon" Region="117, 46, 16, 18" />
+                    <uc:CvElementInfo Category="Icon" Region="75, 42, 22, 21" />
+                    <uc:CvElementInfo Category="Icon" Region="498, 6, 21, 20" />
+                    <uc:CvElementInfo Category="Icon" Region="927, 149, 22, 21" />
+                    <uc:CvElementInfo Category="CloseButton" Region="461, 6, 17, 18" />
+                    <uc:CvElementInfo Category="InputBox" Region="108, 36, 967, 34" />
+                    <uc:CvElementInfo Category="ArrowButton" Region="736, 70, 20, 20" />
+                    <uc:CvElementInfo Category="Icon" Region="20, 93, 26, 22" />
+                    <uc:CvElementInfo Category="Icon" Region="1045, 44, 22, 21" />
+                    <uc:CvElementInfo Category="Icon" Region="1156, 92, 19, 21" />
+                    <uc:CvElementInfo Category="Icon" Region="1116, 43, 21, 21" />
+                    <uc:CvElementInfo Category="CloseButton" Region="1246, 4, 19, 19" />
+                    <uc:CvElementInfo Category="ArrowButton" Region="1261, 131, 18, 20" />
+                    <uc:CvElementInfo Category="CloseButton" Region="222, 6, 17, 18" />
+                    <uc:CvElementInfo Category="ArrowButton" Region="1109, 4, 20, 16" />
+                    <uc:CvElementInfo Category="Icon" Region="1184, 84, 42, 39" />
+                    <uc:CvElementInfo Category="MaximizeButton" Region="1200, 4, 18, 18" />
+                    <uc:CvElementInfo Category="MinimizeButton" Region="1154, 4, 21, 18" />
+                    <uc:CvElementInfo Category="Button" Region="1, 0, 246, 34" />
+                    <uc:CvElementInfo Category="ArrowButton" Region="1262, 662, 18, 17" />
+                    <uc:CvElementInfo Category="ArrowButton" Region="737, 637, 19, 19" />
+                    <uc:CvElementInfo Category="Icon" Region="1248, 42, 18, 24" />
+                    <uc:CvElementInfo Category="ArrowButton" Region="1094, 330, 20, 18" />
+                    <uc:CvElementInfo Category="Icon" Region="10, 43, 22, 21" />
+                    <uc:CvElementInfo Category="ArrowButton" Region="282, 657, 18, 22" />
+                    <uc:CvElementInfo Category="Icon" Region="42, 42, 22, 22" />
+                    <uc:CvElementInfo Category="Icon" Region="1236, 92, 18, 24" />
+                    <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="1144, 40, 95, 30" />
+                    <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="42, 42, 22, 22" />
+                    <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="1143, 39, 95, 31" />
+                    <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="1185, 85, 40, 38" />
+                    <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="368, 654, 418, 26" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="89, 346, 51, 132" />
+                    <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="367, 653, 418, 26" />
+                    <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="10, 42, 22, 21" />
+                    <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="87, 345, 52, 138" />
+                    <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="922, 142, 195, 36" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="94, 534, 48, 115" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="92, 159, 50, 115" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="1110, 5, 18, 15" />
+                    <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="96, 644, 56, 4" />
+                    <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="1098, 302, 40, 38" />
+                    <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="85, 484, 52, 46" />
+                    <uc:CvElementInfo Category="InputBox" Region="922, 250, 194, 36" />
+                    <uc:CvElementInfo Category="InputBox" Region="922, 196, 195, 35" />
+                    <uc:CvElementInfo Category="InputBox" Region="922, 142, 196, 36" />
+                    <uc:CvElementInfo Category="ArrowButton" Region="1093, 150, 20, 18" />
+                    <uc:CvElementInfo Category="ArrowButton" Region="1092, 255, 21, 24" />
+                    <uc:CvElementInfo Category="ArrowButton" Region="1093, 203, 20, 21" />
+                  </scg:List>
+                </uc:CVCache.CvUiElements>
+                <uc:CVCache.OcrTexts>
+                  <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="187">
+                    <uc:OcrTextInfo Region="42, 10, 44, 12" Text="eCourts" />
+                    <uc:OcrTextInfo Region="86, 10, 22, 12" Text="Civil" />
+                    <uc:OcrTextInfo Region="112, 10, 26, 12" Text="Case" />
+                    <uc:OcrTextInfo Region="140, 10, 34, 12" Text="Jacket" />
+                    <uc:OcrTextInfo Region="226, 10, 10, 10" Text="X" />
+                    <uc:OcrTextInfo Region="280, 10, 126, 16" Text="civilCaseSummary.faces" />
+                    <uc:OcrTextInfo Region="464, 10, 10, 10" Text="X" />
+                    <uc:OcrTextInfo Region="500, 8, 14, 14" Text="+" />
+                    <uc:OcrTextInfo Region="1112, 8, 14, 10" Text="v" />
+                    <uc:OcrTextInfo Region="1158, 2, 12, 12" Text="_" />
+                    <uc:OcrTextInfo Region="1250, 6, 12, 14" Text="X" />
+                    <uc:OcrTextInfo Region="142, 46, 478, 16" Text="portal.njcourts.gov/CIVILCaseJacketWeb/pages/civilCaseSummary.faces?cid=1" />
+                    <uc:OcrTextInfo Region="1176, 48, 54, 14" Text="Incognito" />
+                    <uc:OcrTextInfo Region="286, 76, 70, 8" Text="SWC-F-012337-23" />
+                    <uc:OcrTextInfo Region="360, 76, 40, 8" Text="10/24/2023" />
+                    <uc:OcrTextInfo Region="402, 76, 28, 8" Text="8:15:58" />
+                    <uc:OcrTextInfo Region="430, 76, 14, 8" Text="AM" />
+                    <uc:OcrTextInfo Region="450, 76, 38, 10" Text="Pgiof19" />
+                    <uc:OcrTextInfo Region="492, 76, 22, 8" Text="Trans" />
+                    <uc:OcrTextInfo Region="516, 76, 10, 8" Text="ID:" />
+                    <uc:OcrTextInfo Region="528, 76, 64, 8" Text="CHC2023298574" />
+                    <uc:OcrTextInfo Region="66, 98, 74, 14" Text="civilCaseSui" />
+                    <uc:OcrTextInfo Region="778, 98, 36, 14" Text="Print" />
+                    <uc:OcrTextInfo Region="1006, 98, 16, 12" Text="26" />
+                    <uc:OcrTextInfo Region="1024, 98, 40, 14" Text="sheets" />
+                    <uc:OcrTextInfo Region="1064, 98, 16, 14" Text="of" />
+                    <uc:OcrTextInfo Region="1082, 102, 36, 12" Text="paper" />
+                    <uc:OcrTextInfo Region="268, 146, 22, 8" Text="ERIC" />
+                    <uc:OcrTextInfo Region="292, 146, 8, 8" Text="P." />
+                    <uc:OcrTextInfo Region="300, 146, 40, 8" Text="KELNER," />
+                    <uc:OcrTextInfo Region="342, 146, 20, 10" Text="ESQ." />
+                    <uc:OcrTextInfo Region="364, 146, 46, 8" Text="#028542002" />
+                    <uc:OcrTextInfo Region="268, 156, 22, 8" Text="HILL" />
+                    <uc:OcrTextInfo Region="294, 156, 46, 8" Text="WALLACK" />
+                    <uc:OcrTextInfo Region="340, 156, 18, 8" Text="LLP" />
+                    <uc:OcrTextInfo Region="778, 154, 68, 12" Text="Destination" />
+                    <uc:OcrTextInfo Region="954, 154, 58, 12" Text="Microsoft" />
+                    <uc:OcrTextInfo Region="1014, 154, 28, 12" Text="Print" />
+                    <uc:OcrTextInfo Region="1042, 154, 14, 12" Text="to" />
+                    <uc:OcrTextInfo Region="1058, 154, 24, 12" Text="PDF" />
+                    <uc:OcrTextInfo Region="268, 166, 8, 8" Text="21" />
+                    <uc:OcrTextInfo Region="278, 166, 24, 8" Text="Roszel" />
+                    <uc:OcrTextInfo Region="304, 166, 20, 8" Text="Road" />
+                    <uc:OcrTextInfo Region="266, 176, 16, 8" Text="P.O." />
+                    <uc:OcrTextInfo Region="286, 176, 16, 8" Text="Box" />
+                    <uc:OcrTextInfo Region="302, 176, 18, 8" Text="5226" />
+                    <uc:OcrTextInfo Region="268, 186, 36, 8" Text="Princeton," />
+                    <uc:OcrTextInfo Region="304, 186, 18, 8" Text="New" />
+                    <uc:OcrTextInfo Region="324, 186, 22, 10" Text="Jersey" />
+                    <uc:OcrTextInfo Region="346, 186, 46, 8" Text="08543-5226" />
+                    <uc:OcrTextInfo Region="268, 196, 20, 8" Text="(609)" />
+                    <uc:OcrTextInfo Region="282, 196, 40, 10" Text="))924-0808" />
+                    <uc:OcrTextInfo Region="268, 206, 36, 10" Text="Attomeys" />
+                    <uc:OcrTextInfo Region="304, 206, 10, 8" Text="for" />
+                    <uc:OcrTextInfo Region="316, 206, 30, 8" Text="Plaintiff" />
+                    <uc:OcrTextInfo Region="780, 208, 34, 16" Text="Pages" />
+                    <uc:OcrTextInfo Region="930, 208, 16, 12" Text="All" />
+                    <uc:OcrTextInfo Region="266, 216, 16, 8" Text="Our" />
+                    <uc:OcrTextInfo Region="284, 216, 14, 8" Text="File" />
+                    <uc:OcrTextInfo Region="298, 216, 14, 8" Text="No." />
+                    <uc:OcrTextInfo Region="334, 216, 34, 8" Text="I-4768/sh" />
+                    <uc:OcrTextInfo Region="268, 230, 60, 8" Text="BANKUNITED," />
+                    <uc:OcrTextInfo Region="328, 230, 20, 8" Text="N.A.," />
+                    <uc:OcrTextInfo Region="448, 230, 44, 8" Text="SUPERIOR" />
+                    <uc:OcrTextInfo Region="492, 230, 32, 8" Text="COURT" />
+                    <uc:OcrTextInfo Region="524, 230, 12, 8" Text="OF" />
+                    <uc:OcrTextInfo Region="538, 230, 20, 8" Text="NEW" />
+                    <uc:OcrTextInfo Region="560, 230, 32, 8" Text="JERSEY" />
+                    <uc:OcrTextInfo Region="448, 240, 48, 8" Text="CHANCERY" />
+                    <uc:OcrTextInfo Region="498, 240, 40, 8" Text="DIVISION" />
+                    <uc:OcrTextInfo Region="346, 250, 32, 8" Text="Plaintiff," />
+                    <uc:OcrTextInfo Region="448, 250, 36, 8" Text="PASSAIC" />
+                    <uc:OcrTextInfo Region="486, 250, 38, 8" Text="COUNTY" />
+                    <uc:OcrTextInfo Region="266, 262, 12, 6" Text="vs." />
+                    <uc:OcrTextInfo Region="448, 270, 36, 8" Text="DOCKET" />
+                    <uc:OcrTextInfo Region="486, 270, 14, 8" Text="NO." />
+                    <uc:OcrTextInfo Region="502, 270, 8, 8" Text="F-" />
+                    <uc:OcrTextInfo Region="778, 262, 34, 12" Text="Color" />
+                    <uc:OcrTextInfo Region="930, 262, 34, 12" Text="Color" />
+                    <uc:OcrTextInfo Region="268, 280, 48, 8" Text="JONATHAN" />
+                    <uc:OcrTextInfo Region="316, 280, 8, 8" Text="P." />
+                    <uc:OcrTextInfo Region="324, 280, 32, 10" Text="VOLPE;" />
+                    <uc:OcrTextInfo Region="358, 280, 26, 8" Text="DANA" />
+                    <uc:OcrTextInfo Region="386, 280, 8, 8" Text="E." />
+                    <uc:OcrTextInfo Region="266, 290, 68, 10" Text="QUACKENBUSH" />
+                    <uc:OcrTextInfo Region="336, 290, 24, 8" Text="N/K/A" />
+                    <uc:OcrTextInfo Region="362, 290, 26, 8" Text="DANA" />
+                    <uc:OcrTextInfo Region="388, 290, 8, 8" Text="E." />
+                    <uc:OcrTextInfo Region="398, 290, 32, 10" Text="VOLPE:" />
+                    <uc:OcrTextInfo Region="526, 290, 26, 8" Text="Astion" />
+                    <uc:OcrTextInfo Region="266, 300, 34, 8" Text="UNITED" />
+                    <uc:OcrTextInfo Region="302, 300, 34, 8" Text="STATES" />
+                    <uc:OcrTextInfo Region="336, 300, 12, 8" Text="OF" />
+                    <uc:OcrTextInfo Region="350, 300, 44, 8" Text="AMERICA:" />
+                    <uc:OcrTextInfo Region="268, 310, 28, 8" Text="PHILIP" />
+                    <uc:OcrTextInfo Region="296, 310, 26, 8" Text="PACE:" />
+                    <uc:OcrTextInfo Region="448, 310, 54, 8" Text="COMPLAINT" />
+                    <uc:OcrTextInfo Region="502, 310, 20, 8" Text="FOR" />
+                    <uc:OcrTextInfo Region="522, 310, 66, 8" Text="FORECLOSURE" />
+                    <uc:OcrTextInfo Region="268, 320, 46, 8" Text="AMERICAN" />
+                    <uc:OcrTextInfo Region="316, 320, 42, 8" Text="GENERAL" />
+                    <uc:OcrTextInfo Region="358, 320, 50, 8" Text="FINANCIAL" />
+                    <uc:OcrTextInfo Region="266, 330, 46, 8" Text="SERVICES;" />
+                    <uc:OcrTextInfo Region="268, 340, 40, 8" Text="KRISTINE" />
+                    <uc:OcrTextInfo Region="310, 340, 38, 10" Text="HRUBEC:" />
+                    <uc:OcrTextInfo Region="350, 340, 38, 8" Text="THOMAS" />
+                    <uc:OcrTextInfo Region="388, 340, 40, 8" Text="HRUBEC:" />
+                    <uc:OcrTextInfo Region="778, 334, 32, 12" Text="More" />
+                    <uc:OcrTextInfo Region="812, 334, 48, 16" Text="settings" />
+                    <uc:OcrTextInfo Region="1098, 334, 12, 10" Text="v" />
+                    <uc:OcrTextInfo Region="266, 350, 38, 8" Text="CAPITAL" />
+                    <uc:OcrTextInfo Region="306, 350, 32, 8" Text="CREDIT" />
+                    <uc:OcrTextInfo Region="340, 350, 30, 8" Text="CORP.:" />
+                    <uc:OcrTextInfo Region="268, 360, 22, 8" Text="BEST" />
+                    <uc:OcrTextInfo Region="290, 360, 42, 8" Text="UNIFORM" />
+                    <uc:OcrTextInfo Region="334, 360, 36, 8" Text="RENTAL" />
+                    <uc:OcrTextInfo Region="370, 360, 20, 10" Text="INC." />
+                    <uc:OcrTextInfo Region="268, 370, 46, 8" Text="VINCENZO" />
+                    <uc:OcrTextInfo Region="314, 370, 8, 8" Text="R." />
+                    <uc:OcrTextInfo Region="324, 370, 46, 10" Text="VIGORITO:" />
+                    <uc:OcrTextInfo Region="268, 380, 28, 8" Text="STATE" />
+                    <uc:OcrTextInfo Region="296, 380, 12, 8" Text="OF" />
+                    <uc:OcrTextInfo Region="310, 380, 20, 8" Text="NEW" />
+                    <uc:OcrTextInfo Region="332, 380, 36, 8" Text="JERSEY:" />
+                    <uc:OcrTextInfo Region="268, 390, 48, 8" Text="FICTITIOUS" />
+                    <uc:OcrTextInfo Region="318, 390, 34, 8" Text="SPOUSE" />
+                    <uc:OcrTextInfo Region="352, 392, 14, 8" Text="OR" />
+                    <uc:OcrTextInfo Region="366, 390, 24, 8" Text="CIVIL" />
+                    <uc:OcrTextInfo Region="392, 390, 28, 8" Text="UNION" />
+                    <uc:OcrTextInfo Region="268, 400, 40, 8" Text="PARTNER" />
+                    <uc:OcrTextInfo Region="310, 402, 12, 8" Text="OF" />
+                    <uc:OcrTextInfo Region="322, 400, 48, 8" Text="JONATHAN" />
+                    <uc:OcrTextInfo Region="372, 400, 8, 8" Text="P." />
+                    <uc:OcrTextInfo Region="380, 400, 32, 10" Text="VOLPE:" />
+                    <uc:OcrTextInfo Region="268, 410, 48, 8" Text="FICTITIOUS" />
+                    <uc:OcrTextInfo Region="316, 410, 34, 8" Text="SPOUSE" />
+                    <uc:OcrTextInfo Region="352, 412, 14, 8" Text="OR" />
+                    <uc:OcrTextInfo Region="366, 410, 24, 8" Text="CIVIL" />
+                    <uc:OcrTextInfo Region="392, 410, 28, 8" Text="UNION" />
+                    <uc:OcrTextInfo Region="268, 420, 40, 8" Text="PARTNER" />
+                    <uc:OcrTextInfo Region="310, 422, 12, 8" Text="OF" />
+                    <uc:OcrTextInfo Region="322, 420, 26, 8" Text="DANA" />
+                    <uc:OcrTextInfo Region="350, 420, 68, 8" Text="QUACKENBUSH" />
+                    <uc:OcrTextInfo Region="268, 430, 24, 8" Text="N/K/A" />
+                    <uc:OcrTextInfo Region="294, 430, 26, 8" Text="DANA" />
+                    <uc:OcrTextInfo Region="320, 430, 8, 8" Text="E." />
+                    <uc:OcrTextInfo Region="330, 430, 32, 10" Text="VOLPE;" />
+                    <uc:OcrTextInfo Region="346, 460, 42, 8" Text="Defendants." />
+                    <uc:OcrTextInfo Region="294, 484, 46, 10" Text="BankUnited," />
+                    <uc:OcrTextInfo Region="340, 486, 20, 8" Text="N.A.," />
+                    <uc:OcrTextInfo Region="362, 486, 26, 10" Text="having" />
+                    <uc:OcrTextInfo Region="388, 486, 4, 6" Text="a" />
+                    <uc:OcrTextInfo Region="394, 486, 20, 10" Text="place" />
+                    <uc:OcrTextInfo Region="414, 486, 10, 8" Text="of" />
+                    <uc:OcrTextInfo Region="424, 486, 32, 8" Text="business" />
+                    <uc:OcrTextInfo Region="456, 486, 8, 6" Text="at" />
+                    <uc:OcrTextInfo Region="464, 486, 12, 8" Text="c/o" />
+                    <uc:OcrTextInfo Region="478, 486, 38, 10" Text="Carrington" />
+                    <uc:OcrTextInfo Region="518, 486, 34, 10" Text="Mortgage" />
+                    <uc:OcrTextInfo Region="554, 484, 32, 10" Text="Services," />
+                    <uc:OcrTextInfo Region="586, 484, 20, 10" Text="LLC." />
+                    <uc:OcrTextInfo Region="268, 506, 18, 8" Text="1600" />
+                    <uc:OcrTextInfo Region="288, 506, 22, 8" Text="South" />
+                    <uc:OcrTextInfo Region="310, 504, 34, 10" Text="Douglass" />
+                    <uc:OcrTextInfo Region="344, 506, 22, 8" Text="Road," />
+                    <uc:OcrTextInfo Region="368, 506, 18, 8" Text="Sutie" />
+                    <uc:OcrTextInfo Region="388, 504, 26, 10" Text="200-A," />
+                    <uc:OcrTextInfo Region="414, 504, 34, 10" Text="Anaheim," />
+                    <uc:OcrTextInfo Region="450, 504, 14, 8" Text="CA" />
+                    <uc:OcrTextInfo Region="464, 504, 26, 10" Text="92806," />
+                    <uc:OcrTextInfo Region="492, 504, 12, 8" Text="the" />
+                    <uc:OcrTextInfo Region="504, 504, 32, 8" Text="Plaintiff" />
+                    <uc:OcrTextInfo Region="534, 506, 8, 8" Text="in" />
+                    <uc:OcrTextInfo Region="544, 504, 12, 8" Text="the" />
+                    <uc:OcrTextInfo Region="556, 504, 52, 8" Text="above-entitled" />
+                    <uc:OcrTextInfo Region="266, 526, 22, 6" Text="cause" />
+                    <uc:OcrTextInfo Region="288, 526, 10, 8" Text="of" />
+                    <uc:OcrTextInfo Region="298, 526, 24, 8" Text="action." />
+                    <uc:OcrTextInfo Region="324, 526, 20, 8" Text="says:" />
+                    <uc:OcrTextInfo Region="268, 592, 28, 6" Text="103556455," />
+                    <uc:OcrTextInfo Region="296, 592, 6, 6" Text="I1" />
+                    <uc:OcrTextInfo Region="996, 616, 30, 12" Text="Print" />
+                    <uc:OcrTextInfo Region="1066, 616, 42, 12" Text="Cancel" />
+                    <uc:OcrTextInfo Region="468, 662, 40, 14" Text="BEST" />
+                    <uc:OcrTextInfo Region="510, 660, 76, 14" Text="UNIFORM" />
+                    <uc:OcrTextInfo Region="588, 662, 64, 14" Text="RENTAL" />
+                    <uc:OcrTextInfo Region="656, 660, 36, 16" Text="INC.;" />
+                  </scg:List>
+                </uc:CVCache.OcrTexts>
+              </uc:CVCache>
+              <uc:CVCache DataSent="False" DisplayName="Screen CV Click - 'Save'" Id="bfc3b3d4-bf4a-4eae-8487-eac3cc534ce0" InformativeScreenshot="e13e8a154d720a1ae1505158f30e0f80" LogicalPosition="0, 0" OcrText="eCourts Civil Case Jacket X civilCaseSummary.faces X civilCaseSummary.faces X + v _ X portal.njcourts.gov/CIVILCaseJacketWeb/pages/civilCaseSummary.faces?cid=1 Incognito SWC-F-012337-23 10/24/2023 8:15:58 AM Pgiof19 Trans ID: CHC2023298574 civilCaseSui Print 26 pages ERIC P. KELNER, ESQ. #028542002 HILL WALLACK LLP Destination Save as PDF 21 Roszel Road P.O. Box 5226 Princeton, New Jersey 08543-5226 (609) ))924-0808 Attomeys for Plaintiff Pages All Our File No. I-4768/sh BANKUNITED, N.A., SUPERIOR COURT OF NEW JERSEY CHANCERY DIVISION Plaintiff, PASSAIC COUNTY vs. DOCKET NO. F- Pages per sheet 1 JONATHAN P. VOLPE; DANA E. QUACKENBUSH N/K/A DANA E. VOLPE: Astion UNITED STATES OF AMERICA: PHILIP PACE: COMPLAINT FOR FORECLOSURE AMERICAN GENERAL FINANCIAL SERVICES; KRISTINE HRUBEC: THOMAS HRUBEC: CAPITAL CREDIT CORP.: BEST UNIFORM RENTAL INC. VINCENZO R. VIGORITO: STATE OF NEW JERSEY: FICTITIOUS SPOUSE OR CIVIL UNION PARTNER OF JONATHAN P. VOLPE: FICTITIOUS SPOUSE OR CIVIL UNION PARTNER OF DANA QUACKENBUSH N/K/A DANA E. VOLPE; Defendants. BankUnited, N.A., having a place of business at c/o Carrington Mortgage Services, LLC, 1600 South Douglass Road, Sutie 200-A, Anaheim, CA 92806, the Plaintiff in the above-entitled cause of action. says: 103556455, I1 Save Cancel BEST UNIFORM RENTAL INC.;" Position="0, 0" ScaleFactor="1.5" ServerVersion="1">
+                <uc:CVCache.CvUiElements>
+                  <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="54">
+                    <uc:CvElementInfo Category="Button" Region="976, 606, 69, 34" />
+                    <uc:CvElementInfo Category="Button" Region="1051, 606, 74, 34" />
+                    <uc:CvElementInfo Category="Icon" Region="1084, 42, 22, 22" />
+                    <uc:CvElementInfo Category="Button" Region="484, 0, 240, 36" />
+                    <uc:CvElementInfo Category="Icon" Region="117, 46, 16, 18" />
+                    <uc:CvElementInfo Category="Icon" Region="1145, 40, 29, 28" />
+                    <uc:CvElementInfo Category="Icon" Region="75, 42, 22, 21" />
+                    <uc:CvElementInfo Category="CloseButton" Region="700, 6, 18, 18" />
+                    <uc:CvElementInfo Category="Icon" Region="1045, 44, 22, 21" />
+                    <uc:CvElementInfo Category="Icon" Region="736, 6, 21, 20" />
+                    <uc:CvElementInfo Category="InputBox" Region="109, 36, 966, 35" />
+                    <uc:CvElementInfo Category="ArrowButton" Region="736, 70, 20, 20" />
+                    <uc:CvElementInfo Category="Icon" Region="20, 93, 26, 22" />
+                    <uc:CvElementInfo Category="CloseButton" Region="222, 6, 18, 18" />
+                    <uc:CvElementInfo Category="Icon" Region="1156, 92, 19, 21" />
+                    <uc:CvElementInfo Category="CloseButton" Region="462, 7, 17, 18" />
+                    <uc:CvElementInfo Category="CloseButton" Region="1246, 4, 19, 19" />
+                    <uc:CvElementInfo Category="Icon" Region="1116, 43, 21, 21" />
+                    <uc:CvElementInfo Category="ArrowButton" Region="1261, 131, 18, 20" />
+                    <uc:CvElementInfo Category="Button" Region="246, 1, 238, 33" />
+                    <uc:CvElementInfo Category="Icon" Region="1184, 84, 42, 39" />
+                    <uc:CvElementInfo Category="Icon" Region="928, 148, 20, 22" />
+                    <uc:CvElementInfo Category="Button" Region="2, 1, 246, 32" />
+                    <uc:CvElementInfo Category="MaximizeButton" Region="1200, 4, 18, 18" />
+                    <uc:CvElementInfo Category="MinimizeButton" Region="1154, 4, 21, 18" />
+                    <uc:CvElementInfo Category="ArrowButton" Region="1262, 662, 18, 17" />
+                    <uc:CvElementInfo Category="ArrowButton" Region="737, 637, 19, 19" />
+                    <uc:CvElementInfo Category="Icon" Region="1248, 42, 18, 24" />
+                    <uc:CvElementInfo Category="Icon" Region="10, 43, 22, 21" />
+                    <uc:CvElementInfo Category="ArrowButton" Region="282, 657, 18, 22" />
+                    <uc:CvElementInfo Category="Icon" Region="42, 42, 22, 22" />
+                    <uc:CvElementInfo Category="Icon" Region="1236, 92, 18, 24" />
+                    <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="1144, 40, 95, 30" />
+                    <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="42, 42, 22, 22" />
+                    <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="1185, 85, 40, 38" />
+                    <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="1143, 39, 95, 31" />
+                    <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="368, 654, 418, 26" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="89, 346, 51, 132" />
+                    <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="367, 653, 418, 26" />
+                    <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="10, 42, 22, 21" />
+                    <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="87, 345, 52, 138" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="94, 534, 48, 115" />
+                    <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="921, 140, 198, 38" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="92, 159, 50, 115" />
+                    <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="96, 644, 56, 4" />
+                    <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="85, 484, 52, 46" />
+                    <uc:CvElementInfo Category="InputBox" Region="922, 250, 195, 36" />
+                    <uc:CvElementInfo Category="InputBox" Region="922, 196, 195, 35" />
+                    <uc:CvElementInfo Category="InputBox" Region="922, 141, 197, 37" />
+                    <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="727, 1, 422, 32" />
+                    <uc:CvElementInfo Category="ArrowButton" Region="1109, 4, 20, 16" />
+                    <uc:CvElementInfo Category="ArrowButton" Region="1092, 256, 21, 24" />
+                    <uc:CvElementInfo Category="ArrowButton" Region="1092, 202, 21, 23" />
+                    <uc:CvElementInfo Category="ArrowButton" Region="1092, 147, 22, 26" />
+                  </scg:List>
+                </uc:CVCache.CvUiElements>
+                <uc:CVCache.OcrTexts>
+                  <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="185">
+                    <uc:OcrTextInfo Region="42, 10, 44, 12" Text="eCourts" />
+                    <uc:OcrTextInfo Region="86, 10, 22, 12" Text="Civil" />
+                    <uc:OcrTextInfo Region="112, 10, 26, 12" Text="Case" />
+                    <uc:OcrTextInfo Region="140, 10, 34, 12" Text="Jacket" />
+                    <uc:OcrTextInfo Region="226, 10, 10, 10" Text="X" />
+                    <uc:OcrTextInfo Region="280, 10, 126, 14" Text="civilCaseSummary.faces" />
+                    <uc:OcrTextInfo Region="464, 10, 10, 10" Text="X" />
+                    <uc:OcrTextInfo Region="520, 10, 126, 16" Text="civilCaseSummary.faces" />
+                    <uc:OcrTextInfo Region="704, 10, 10, 10" Text="X" />
+                    <uc:OcrTextInfo Region="740, 8, 14, 14" Text="+" />
+                    <uc:OcrTextInfo Region="1112, 8, 14, 10" Text="v" />
+                    <uc:OcrTextInfo Region="1158, 2, 12, 12" Text="_" />
+                    <uc:OcrTextInfo Region="1250, 6, 12, 14" Text="X" />
+                    <uc:OcrTextInfo Region="142, 46, 478, 16" Text="portal.njcourts.gov/CIVILCaseJacketWeb/pages/civilCaseSummary.faces?cid=1" />
+                    <uc:OcrTextInfo Region="1176, 48, 54, 14" Text="Incognito" />
+                    <uc:OcrTextInfo Region="286, 76, 70, 8" Text="SWC-F-012337-23" />
+                    <uc:OcrTextInfo Region="360, 76, 40, 8" Text="10/24/2023" />
+                    <uc:OcrTextInfo Region="402, 76, 28, 8" Text="8:15:58" />
+                    <uc:OcrTextInfo Region="430, 76, 14, 8" Text="AM" />
+                    <uc:OcrTextInfo Region="450, 76, 38, 10" Text="Pgiof19" />
+                    <uc:OcrTextInfo Region="492, 76, 22, 8" Text="Trans" />
+                    <uc:OcrTextInfo Region="516, 74, 12, 10" Text="ID:" />
+                    <uc:OcrTextInfo Region="528, 76, 64, 8" Text="CHC2023298574" />
+                    <uc:OcrTextInfo Region="66, 98, 74, 14" Text="civilCaseSui" />
+                    <uc:OcrTextInfo Region="778, 98, 36, 14" Text="Print" />
+                    <uc:OcrTextInfo Region="1062, 98, 16, 12" Text="26" />
+                    <uc:OcrTextInfo Region="1080, 102, 36, 12" Text="pages" />
+                    <uc:OcrTextInfo Region="268, 146, 22, 8" Text="ERIC" />
+                    <uc:OcrTextInfo Region="292, 146, 8, 8" Text="P." />
+                    <uc:OcrTextInfo Region="300, 146, 40, 8" Text="KELNER," />
+                    <uc:OcrTextInfo Region="342, 146, 20, 10" Text="ESQ." />
+                    <uc:OcrTextInfo Region="364, 146, 46, 8" Text="#028542002" />
+                    <uc:OcrTextInfo Region="268, 156, 22, 8" Text="HILL" />
+                    <uc:OcrTextInfo Region="294, 156, 46, 8" Text="WALLACK" />
+                    <uc:OcrTextInfo Region="340, 156, 18, 8" Text="LLP" />
+                    <uc:OcrTextInfo Region="778, 154, 68, 12" Text="Destination" />
+                    <uc:OcrTextInfo Region="954, 154, 28, 12" Text="Save" />
+                    <uc:OcrTextInfo Region="984, 156, 14, 10" Text="as" />
+                    <uc:OcrTextInfo Region="1000, 154, 24, 12" Text="PDF" />
+                    <uc:OcrTextInfo Region="268, 166, 8, 8" Text="21" />
+                    <uc:OcrTextInfo Region="278, 166, 24, 8" Text="Roszel" />
+                    <uc:OcrTextInfo Region="304, 166, 20, 8" Text="Road" />
+                    <uc:OcrTextInfo Region="266, 176, 16, 8" Text="P.O." />
+                    <uc:OcrTextInfo Region="286, 176, 16, 8" Text="Box" />
+                    <uc:OcrTextInfo Region="302, 176, 18, 8" Text="5226" />
+                    <uc:OcrTextInfo Region="268, 186, 36, 8" Text="Princeton," />
+                    <uc:OcrTextInfo Region="304, 186, 18, 8" Text="New" />
+                    <uc:OcrTextInfo Region="324, 186, 22, 10" Text="Jersey" />
+                    <uc:OcrTextInfo Region="346, 186, 46, 8" Text="08543-5226" />
+                    <uc:OcrTextInfo Region="268, 196, 20, 8" Text="(609)" />
+                    <uc:OcrTextInfo Region="282, 196, 40, 10" Text="))924-0808" />
+                    <uc:OcrTextInfo Region="268, 206, 36, 10" Text="Attomeys" />
+                    <uc:OcrTextInfo Region="304, 206, 10, 8" Text="for" />
+                    <uc:OcrTextInfo Region="316, 206, 30, 8" Text="Plaintiff" />
+                    <uc:OcrTextInfo Region="780, 208, 34, 16" Text="Pages" />
+                    <uc:OcrTextInfo Region="930, 208, 16, 12" Text="All" />
+                    <uc:OcrTextInfo Region="266, 216, 16, 8" Text="Our" />
+                    <uc:OcrTextInfo Region="284, 216, 14, 8" Text="File" />
+                    <uc:OcrTextInfo Region="298, 216, 14, 8" Text="No." />
+                    <uc:OcrTextInfo Region="334, 216, 34, 8" Text="I-4768/sh" />
+                    <uc:OcrTextInfo Region="268, 230, 60, 8" Text="BANKUNITED," />
+                    <uc:OcrTextInfo Region="328, 230, 20, 8" Text="N.A.," />
+                    <uc:OcrTextInfo Region="448, 230, 44, 8" Text="SUPERIOR" />
+                    <uc:OcrTextInfo Region="492, 230, 32, 8" Text="COURT" />
+                    <uc:OcrTextInfo Region="524, 230, 12, 8" Text="OF" />
+                    <uc:OcrTextInfo Region="538, 230, 20, 8" Text="NEW" />
+                    <uc:OcrTextInfo Region="560, 230, 32, 8" Text="JERSEY" />
+                    <uc:OcrTextInfo Region="448, 240, 48, 8" Text="CHANCERY" />
+                    <uc:OcrTextInfo Region="498, 240, 40, 8" Text="DIVISION" />
+                    <uc:OcrTextInfo Region="346, 250, 32, 8" Text="Plaintiff," />
+                    <uc:OcrTextInfo Region="448, 250, 36, 8" Text="PASSAIC" />
+                    <uc:OcrTextInfo Region="486, 250, 38, 8" Text="COUNTY" />
+                    <uc:OcrTextInfo Region="266, 262, 12, 6" Text="vs." />
+                    <uc:OcrTextInfo Region="448, 270, 36, 8" Text="DOCKET" />
+                    <uc:OcrTextInfo Region="486, 270, 14, 8" Text="NO." />
+                    <uc:OcrTextInfo Region="502, 270, 8, 8" Text="F-" />
+                    <uc:OcrTextInfo Region="778, 262, 36, 16" Text="Pages" />
+                    <uc:OcrTextInfo Region="816, 264, 22, 12" Text="per" />
+                    <uc:OcrTextInfo Region="838, 262, 32, 12" Text="sheet" />
+                    <uc:OcrTextInfo Region="932, 262, 6, 12" Text="1" />
+                    <uc:OcrTextInfo Region="268, 280, 48, 8" Text="JONATHAN" />
+                    <uc:OcrTextInfo Region="316, 280, 8, 8" Text="P." />
+                    <uc:OcrTextInfo Region="324, 280, 32, 10" Text="VOLPE;" />
+                    <uc:OcrTextInfo Region="358, 280, 26, 8" Text="DANA" />
+                    <uc:OcrTextInfo Region="386, 280, 8, 8" Text="E." />
+                    <uc:OcrTextInfo Region="266, 290, 68, 10" Text="QUACKENBUSH" />
+                    <uc:OcrTextInfo Region="336, 290, 24, 8" Text="N/K/A" />
+                    <uc:OcrTextInfo Region="362, 290, 26, 8" Text="DANA" />
+                    <uc:OcrTextInfo Region="388, 290, 8, 8" Text="E." />
+                    <uc:OcrTextInfo Region="398, 290, 32, 10" Text="VOLPE:" />
+                    <uc:OcrTextInfo Region="526, 290, 26, 8" Text="Astion" />
+                    <uc:OcrTextInfo Region="266, 300, 34, 8" Text="UNITED" />
+                    <uc:OcrTextInfo Region="302, 300, 34, 8" Text="STATES" />
+                    <uc:OcrTextInfo Region="336, 300, 12, 8" Text="OF" />
+                    <uc:OcrTextInfo Region="350, 300, 44, 8" Text="AMERICA:" />
+                    <uc:OcrTextInfo Region="268, 310, 28, 8" Text="PHILIP" />
+                    <uc:OcrTextInfo Region="296, 310, 26, 8" Text="PACE:" />
+                    <uc:OcrTextInfo Region="448, 310, 54, 8" Text="COMPLAINT" />
+                    <uc:OcrTextInfo Region="502, 310, 20, 8" Text="FOR" />
+                    <uc:OcrTextInfo Region="522, 310, 66, 8" Text="FORECLOSURE" />
+                    <uc:OcrTextInfo Region="268, 320, 46, 8" Text="AMERICAN" />
+                    <uc:OcrTextInfo Region="316, 320, 42, 8" Text="GENERAL" />
+                    <uc:OcrTextInfo Region="358, 320, 50, 8" Text="FINANCIAL" />
+                    <uc:OcrTextInfo Region="266, 330, 46, 8" Text="SERVICES;" />
+                    <uc:OcrTextInfo Region="268, 340, 40, 8" Text="KRISTINE" />
+                    <uc:OcrTextInfo Region="310, 340, 38, 10" Text="HRUBEC:" />
+                    <uc:OcrTextInfo Region="350, 340, 38, 8" Text="THOMAS" />
+                    <uc:OcrTextInfo Region="388, 340, 40, 8" Text="HRUBEC:" />
+                    <uc:OcrTextInfo Region="266, 350, 38, 8" Text="CAPITAL" />
+                    <uc:OcrTextInfo Region="306, 350, 32, 8" Text="CREDIT" />
+                    <uc:OcrTextInfo Region="340, 350, 30, 8" Text="CORP.:" />
+                    <uc:OcrTextInfo Region="268, 360, 22, 8" Text="BEST" />
+                    <uc:OcrTextInfo Region="290, 360, 42, 8" Text="UNIFORM" />
+                    <uc:OcrTextInfo Region="334, 360, 36, 8" Text="RENTAL" />
+                    <uc:OcrTextInfo Region="370, 360, 20, 10" Text="INC." />
+                    <uc:OcrTextInfo Region="268, 370, 46, 8" Text="VINCENZO" />
+                    <uc:OcrTextInfo Region="314, 370, 8, 8" Text="R." />
+                    <uc:OcrTextInfo Region="324, 370, 46, 10" Text="VIGORITO:" />
+                    <uc:OcrTextInfo Region="268, 380, 28, 8" Text="STATE" />
+                    <uc:OcrTextInfo Region="296, 380, 12, 8" Text="OF" />
+                    <uc:OcrTextInfo Region="310, 380, 20, 8" Text="NEW" />
+                    <uc:OcrTextInfo Region="332, 380, 36, 8" Text="JERSEY:" />
+                    <uc:OcrTextInfo Region="268, 390, 48, 8" Text="FICTITIOUS" />
+                    <uc:OcrTextInfo Region="318, 390, 34, 8" Text="SPOUSE" />
+                    <uc:OcrTextInfo Region="352, 392, 14, 8" Text="OR" />
+                    <uc:OcrTextInfo Region="366, 390, 24, 8" Text="CIVIL" />
+                    <uc:OcrTextInfo Region="392, 390, 28, 8" Text="UNION" />
+                    <uc:OcrTextInfo Region="268, 400, 40, 8" Text="PARTNER" />
+                    <uc:OcrTextInfo Region="310, 402, 12, 8" Text="OF" />
+                    <uc:OcrTextInfo Region="322, 400, 48, 8" Text="JONATHAN" />
+                    <uc:OcrTextInfo Region="372, 400, 8, 8" Text="P." />
+                    <uc:OcrTextInfo Region="380, 400, 32, 10" Text="VOLPE:" />
+                    <uc:OcrTextInfo Region="268, 410, 48, 8" Text="FICTITIOUS" />
+                    <uc:OcrTextInfo Region="316, 410, 34, 8" Text="SPOUSE" />
+                    <uc:OcrTextInfo Region="352, 412, 14, 8" Text="OR" />
+                    <uc:OcrTextInfo Region="366, 410, 24, 8" Text="CIVIL" />
+                    <uc:OcrTextInfo Region="392, 410, 28, 8" Text="UNION" />
+                    <uc:OcrTextInfo Region="268, 420, 40, 8" Text="PARTNER" />
+                    <uc:OcrTextInfo Region="310, 422, 12, 8" Text="OF" />
+                    <uc:OcrTextInfo Region="322, 420, 26, 8" Text="DANA" />
+                    <uc:OcrTextInfo Region="350, 420, 68, 8" Text="QUACKENBUSH" />
+                    <uc:OcrTextInfo Region="268, 430, 24, 8" Text="N/K/A" />
+                    <uc:OcrTextInfo Region="294, 430, 26, 8" Text="DANA" />
+                    <uc:OcrTextInfo Region="320, 430, 8, 8" Text="E." />
+                    <uc:OcrTextInfo Region="330, 430, 32, 10" Text="VOLPE;" />
+                    <uc:OcrTextInfo Region="346, 460, 42, 8" Text="Defendants." />
+                    <uc:OcrTextInfo Region="294, 484, 46, 10" Text="BankUnited," />
+                    <uc:OcrTextInfo Region="340, 486, 20, 8" Text="N.A.," />
+                    <uc:OcrTextInfo Region="362, 486, 26, 10" Text="having" />
+                    <uc:OcrTextInfo Region="388, 486, 4, 6" Text="a" />
+                    <uc:OcrTextInfo Region="394, 486, 20, 10" Text="place" />
+                    <uc:OcrTextInfo Region="414, 486, 10, 8" Text="of" />
+                    <uc:OcrTextInfo Region="424, 486, 32, 8" Text="business" />
+                    <uc:OcrTextInfo Region="456, 486, 8, 6" Text="at" />
+                    <uc:OcrTextInfo Region="464, 486, 12, 8" Text="c/o" />
+                    <uc:OcrTextInfo Region="478, 486, 38, 10" Text="Carrington" />
+                    <uc:OcrTextInfo Region="518, 486, 34, 10" Text="Mortgage" />
+                    <uc:OcrTextInfo Region="554, 484, 32, 10" Text="Services," />
+                    <uc:OcrTextInfo Region="586, 484, 20, 10" Text="LLC," />
+                    <uc:OcrTextInfo Region="268, 506, 18, 8" Text="1600" />
+                    <uc:OcrTextInfo Region="288, 506, 22, 8" Text="South" />
+                    <uc:OcrTextInfo Region="310, 504, 34, 10" Text="Douglass" />
+                    <uc:OcrTextInfo Region="344, 506, 22, 8" Text="Road," />
+                    <uc:OcrTextInfo Region="368, 506, 18, 8" Text="Sutie" />
+                    <uc:OcrTextInfo Region="388, 504, 26, 10" Text="200-A," />
+                    <uc:OcrTextInfo Region="414, 504, 34, 10" Text="Anaheim," />
+                    <uc:OcrTextInfo Region="450, 504, 14, 8" Text="CA" />
+                    <uc:OcrTextInfo Region="464, 504, 26, 10" Text="92806," />
+                    <uc:OcrTextInfo Region="492, 504, 12, 8" Text="the" />
+                    <uc:OcrTextInfo Region="504, 504, 32, 8" Text="Plaintiff" />
+                    <uc:OcrTextInfo Region="534, 506, 8, 8" Text="in" />
+                    <uc:OcrTextInfo Region="544, 504, 12, 8" Text="the" />
+                    <uc:OcrTextInfo Region="556, 504, 52, 8" Text="above-entitled" />
+                    <uc:OcrTextInfo Region="266, 526, 22, 6" Text="cause" />
+                    <uc:OcrTextInfo Region="288, 526, 10, 8" Text="of" />
+                    <uc:OcrTextInfo Region="298, 526, 24, 8" Text="action." />
+                    <uc:OcrTextInfo Region="324, 526, 20, 8" Text="says:" />
+                    <uc:OcrTextInfo Region="268, 592, 28, 6" Text="103556455," />
+                    <uc:OcrTextInfo Region="296, 592, 6, 6" Text="I1" />
+                    <uc:OcrTextInfo Region="996, 616, 30, 12" Text="Save" />
+                    <uc:OcrTextInfo Region="1066, 616, 42, 12" Text="Cancel" />
+                    <uc:OcrTextInfo Region="468, 662, 40, 14" Text="BEST" />
+                    <uc:OcrTextInfo Region="510, 660, 76, 14" Text="UNIFORM" />
+                    <uc:OcrTextInfo Region="588, 662, 64, 14" Text="RENTAL" />
+                    <uc:OcrTextInfo Region="656, 660, 36, 16" Text="INC.;" />
+                  </scg:List>
+                </uc:CVCache.OcrTexts>
+              </uc:CVCache>
+            </scg:List>
+          </uc:CvCacheContainer.Caches>
+        </uc:CvCacheContainer>
+      </p:CVScope.DesignTimeCacheContainer>
+      <p:CVScope.OCREngine>
+        <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+          <ActivityFunc.Argument>
+            <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+          </ActivityFunc.Argument>
+          <p1:UiPathScreenOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="400,25" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_3" Image="[Image]" Language="en" NoopExecution="False" Profile="Screen" Scale="1" Timeout="100000" />
+        </ActivityFunc>
+      </p:CVScope.OCREngine>
+      <p:CVScope.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="569687dd-5480-41ea-9b2b-7c3a94ef084f" InformativeScreenshot="2dc5d6d3aa9f3a4fa7c70061df62edf7" Selector="&lt;wnd app='chrome.exe' cls='Chrome*' title='*' /&gt;" WaitForReady="INTERACTIVE">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+        </ui:Target>
+      </p:CVScope.Target>
+      <p:CVScope.UseLocalServer>
+        <InArgument x:TypeArguments="x:Boolean" />
+      </p:CVScope.UseLocalServer>
+    </p:CVScope>
+  </Sequence>
+</Activity>

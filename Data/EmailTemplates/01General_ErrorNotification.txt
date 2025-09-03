@@ -1,0 +1,18 @@
+Dear Team,
+
+This is to inform you that I would not proceed with the ProcessName Process on MachineName because errorMessage
+
+Number Of Successfull runtime downloads : NumberOfDownloads
+Last Docket Number Downloaded : LastDocketNumber
+
+
+Thanks for your help.
+
+
+Regards,
+
+Jason Robot
+Msv Projects
+ProcessName
+NationWide Abstract LLC
+
